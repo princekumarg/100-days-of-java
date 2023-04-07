@@ -1,4 +1,4 @@
-package Day11;
+package Day9;
 import java.util.*;
 public class NoOfdigit {
     public static void main(String args[]) {
