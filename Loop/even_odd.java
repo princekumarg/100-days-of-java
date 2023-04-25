@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class even_odd {
     public static void main(String agrs[]) {

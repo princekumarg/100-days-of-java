@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.Scanner;
 public class Power_by_add {
     public static void main(String args[]){

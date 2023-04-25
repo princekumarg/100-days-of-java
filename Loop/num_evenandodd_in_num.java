@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class num_evenandodd_in_num {
     public static void main(String args[]) {

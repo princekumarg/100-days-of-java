@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class first_and_last {
     public static void main(String args[]){

@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class prime_or_not_for {
     public static void main(String args[]) {

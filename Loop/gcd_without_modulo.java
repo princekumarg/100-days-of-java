@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class gcd_without_modulo {
     public static void main(String args[]) {

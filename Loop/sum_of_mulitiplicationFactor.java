@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class sum_of_mulitiplicationFactor {
     public static void main(String args[]) {

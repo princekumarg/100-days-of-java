@@ -1,4 +1,4 @@
-package Day3;
+package Loop;
 import java.util.*;
 public class indviual_sum_pro {
     public static void main(String agrs[]) {
