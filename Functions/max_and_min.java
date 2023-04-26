@@ -1,4 +1,4 @@
-package Day4;
+package Functions;
 import java.util.*;
 public class max_and_min {
     public static void main(String args[]) {

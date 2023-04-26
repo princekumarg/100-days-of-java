@@ -1,4 +1,4 @@
-<h1>Day1(Operator and DataTypes</h1>
+<h1>Day1(Operator and DataTypes)</h1>
 <h3>on This day i have study Operator and Datatypes Question</h3>
 <ul><li>Identification of Datatypes</li>
     <li>Use of printf to print any Datatypes</li>

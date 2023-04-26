@@ -1,4 +1,4 @@
-package Day4;
+package Functions;
 import java.util.*;
 public class find_shape_pri_area {
     public static void main(String args[]){
