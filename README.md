@@ -31,4 +31,8 @@
     <li>Weather No is prime or not</li>
     <li>Sum of Multiplication Factor</li>
  </ul>
- 
+<h1>Day4(Functions)</h1>
+<h3>on This day i have Study about all functions</h3>
+<ul><li>Find the area and perimeter of all diffrent shape</li>
+    <li>Find maximum and Minimum using Functions</li>
+ </ul>
