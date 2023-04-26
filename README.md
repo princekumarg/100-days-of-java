@@ -18,4 +18,17 @@
     <li>Some Numberical type conversion</li>
     <li>Vowel programe</li>
  </ul>
+ <h1>Day3(Loop statement like while and for)</h1>
+ <h3>on This day i have study about Looping statement like for and while loop</h3>
+ <ul><li>Even_Odd</li>
+    <li>Fibionacci series</li>
+    <li>First and the Last sum</li>
+    <li>Gcd With Modulo</li>
+    <li>Individual sum and product</li>
+    <li>Mutiple of a number</li>
+    <li>No of even and odd in a number series</li>
+    <li>Power of Number by additon</li>
+    <li>Weather No is prime or not</li>
+    <li>Sum of Multiplication Factor</li>
+ </ul>
  
