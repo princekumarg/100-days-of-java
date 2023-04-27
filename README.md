@@ -36,3 +36,16 @@
 <ul><li>Find the area and perimeter of all diffrent shape</li>
     <li>Find maximum and Minimum using Functions</li>
  </ul>
+<h1>Day%(Mathmatics)</h1>
+<h3>on This day i have study question related to maths</h3>
+<ul><li>Armstrong number</li>
+    <li>Count individual numnber of elements in number</li>
+    <li>factorial</li>
+    <li>gcd of two number and lcm of two number</li>
+    <li>No of zeros in factorial</li>
+    <li>pailndrom</li>
+    <li>power</li>
+    <li>prime number</li>
+    <li>prim factorization</li>
+    <li>sevies algorithm</li>
+ </ul>
