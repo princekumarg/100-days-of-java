@@ -15,7 +15,7 @@ public class union {
             c[a1 + i] = b[i];
         }
         for (int i = 0; i < c1; i = i + 1) {
-            System.out.print("THe merged array is="c[i]);
+            System.out.print(c[i]+" ");
         }
     }
 }

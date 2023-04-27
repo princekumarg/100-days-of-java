@@ -23,5 +23,20 @@ public class reverse_arr {
         for(i=0;i<n;i++){
             System.out.print(arr[i]+" ");
         }
+        System.out.println();
+        revrse(arr,n);
+        for(int k=0;k<n;k++){
+            System.out.print(arr[k]+" ");
+        }
+    }
+    public static void revrse(int []arr,int n) {
+        int low=0,high=n-1;
+        while(low<high){
+            int temp=arr[low];
+            arr[low]=arr[high];
+            arr[high]=temp;
+            low++;
+            high--;
+        }
     }
 }

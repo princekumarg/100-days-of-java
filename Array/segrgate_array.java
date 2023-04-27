@@ -14,11 +14,27 @@ public class segrgate_array {
         for(int i=0;i<n;i++){
             System.out.print(arr[i]+" ");
         }
+        System.out.println();
+        segrgate_Zeros_atEnds(arr);
+        for(int k=0;k<n;k++){
+            System.out.print(arr[k]+" ");
+        }
     }
     public static void segrgate_arrays(int[] arr) {
         int i=0;
         for(int j=0;j<arr.length;j++){
             if(arr[j]<0){
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+                i++;
+            }
+        }
+    }
+    public static void segrgate_Zeros_atEnds(int[] arr) {
+        int i=0;
+        for(int j=0;j<arr.length;j++){
+            if(arr[j]!=0){
                 int temp=arr[i];
                 arr[i]=arr[j];
                 arr[j]=temp;

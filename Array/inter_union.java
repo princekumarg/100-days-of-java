@@ -7,7 +7,6 @@ public class inter_union {
         int n=s.nextInt();
         int []arr1=new int[n];
         int []arr2=new int[n];
-        int []arr3=new int[n];
         System.out.println("Enter the elements for arr1");
         for(int i=0;i<n;i++){
             arr1[i]=s.nextInt();
