@@ -36,7 +36,7 @@
 <ul><li>Find the area and perimeter of all diffrent shape</li>
     <li>Find maximum and Minimum using Functions</li>
  </ul>
-<h1>Day%(Mathmatics)</h1>
+<h1>Day5(Mathmatics)</h1>
 <h3>on This day i have study question related to maths</h3>
 <ul><li>Armstrong number</li>
     <li>Count individual numnber of elements in number</li>
