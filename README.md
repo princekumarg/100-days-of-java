@@ -49,3 +49,8 @@
     <li>prim factorization</li>
     <li>sevies algorithm</li>
  </ul>
+<h1>Day6(Time_complexity)</h1>
+<h3>on This day i have learn about time complexity related concept in coding</h3>
+<ul><li>Prime number and its time complexity</li>
+    <li>sum of number and time complexity</li>
+ </ul>
