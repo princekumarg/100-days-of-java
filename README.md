@@ -70,7 +70,7 @@
     <li>Tower of Hanoi</li>
  </ul>
 <h1>Day8(Array)</h1>
-<h3>on This day i have study about array</h3>
+<h3>on This day i have study about array its operation</h3>
 <ul><li>Creation of array</li>
     <li>average of array</li>
     <li>array operation</li>
