@@ -54,3 +54,18 @@
 <ul><li>Prime number and its time complexity</li>
     <li>sum of number and time complexity</li>
  </ul>
+<h1>Day7(recursion)</h1>
+<h3>on This day i have study recursion and concept</h3>
+<ul><li>count the sub set for a given sum</li>
+    <li>Even number series using using recursion</li>
+    <li>Factorial using recursion</li>
+    <li>Fibonacci series using recursion</li>
+    <li>Gcd using recursion</li>
+    <li>indivdual sum using recursion</li>
+    <li>Joseph problem</li>
+    <li>Print 1 to N using recursion</li>
+    <li>Power of number using recursion</li>
+    <li>Rop cutting problem problem</li>
+    <li>Sum of N natural number</li>
+    <li>Tower of Hanoi</li>
+ </ul>
