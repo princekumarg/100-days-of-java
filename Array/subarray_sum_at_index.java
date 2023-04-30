@@ -1,24 +1,24 @@
 package Array;
 import java.util.*;
-public class subarray_sum {
+public class subarray_sum_at_index {
     public static void main(String args[]) {
         Scanner s=new Scanner(System.in);
         System.out.print("Enter the index=");
-        int n=s.nextInt();
+        int v=s.nextInt();
         System.out.print("Enter the sum=");
         int sum=s.nextInt();
-        int []arr=new int[n];
+        int []pri=new int[v];
         System.out.println("Enter the index element");
-        for(int i=0;i<n;i++){
+        for(int k=0;k<v;k++){
             int a=s.nextInt();
-            arr[i]=a;
+            pri[k]=a;
         }
-        for(int i=0;i<n;i++){
+        for(int k=0;k<v;k++){
             int sub_sum=0;
-            for(int j=i;j<n;j++){
-                sub_sum=sub_sum+arr[j];
+            for(int p=k;k<v;k++){
+                sub_sum=sub_sum+pri[p];
                 if(sub_sum==sum){
-                    System.out.println("sum found between "+i+" and "+j);
+                    System.out.println("sum found between "+p+" and "+k);
                 }
             }
         }
