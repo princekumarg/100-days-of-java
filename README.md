@@ -69,3 +69,37 @@
     <li>Sum of N natural number</li>
     <li>Tower of Hanoi</li>
  </ul>
+<h1>Day8(Array)</h1>
+<h3>on This day i have study about array its operation</h3>
+<ul><li>Creation of array</li>
+    <li>average of array</li>
+    <li>array operation</li>
+    <li>Array creation using permutation</li>
+    <li>Binary true count in an array</li>
+    <li>duplicate element in array</li>
+    <li>even count and index of array</li>
+    <li>first missing postive number</li>
+    <li>freauency element in an array</li>
+    <li>insert element in array</li>
+    <li>intersection and union of an array</li>
+    <li>Leader element in array</li>
+    <li>Max and Min element in array</li>
+    <li>Maximum product diffrence in an array</li>
+    <li>Maximum sum subarray in an array</li>
+    <li>Maximum circular sum in array</li>
+    <li>missing index in an array</li>
+    <li>pair sum in array</li>
+    <li>pickup the element count in array</li>
+    <li>pluse one to element in array</li>
+    <li>prefix sum and fibonacci array sum</li>
+    <li>product it self in an array</li>
+    <li>remove element at specific postion</li>
+    <li>reverse an array</li>
+    <li>rotate one element in array</li>
+    <li>Second largest element in an array</li>
+    <li>Segrgate array</li>
+    <li>Sorting element in array</li>
+    <li>Stock buy and sell in array</li>
+    <li>Shuffle the array</li>
+    <li>Traping water problem</li>
+ </ul>
