@@ -1,4 +1,4 @@
-package Day7;
+package Recursion;
 import java.util.*;
 public class Joseph_problem {
     public static int Jos_pro(int n,int k) {

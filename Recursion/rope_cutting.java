@@ -1,4 +1,4 @@
-package Day7;
+package Recursion;
 import java.util.*;
 public class rope_cutting {
     public static void main(String args[]) {

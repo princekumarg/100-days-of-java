@@ -1,4 +1,4 @@
-package Day7;
+package Recursion;
 import java.util.*;
 public class power {
     public static void  main(String args[]) {
@@ -11,12 +11,16 @@ public class power {
         if(b==0){
             return 1;
         }
+        else if(b%2!=0){
+            int p=pow(a,(b-1)/2);
+            return a*p*p;
+        }
         /*else{
             return a*pow(a,b-1);//in o(n)
         }*/ 
         else{
             int t=pow(a,b/2);//it will give o(n/2) time complexity;
-            return t*a;
+            return t*t;
         }
     }
 }

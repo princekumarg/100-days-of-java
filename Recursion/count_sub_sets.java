@@ -1,4 +1,4 @@
-package Day7;
+package Recursion;
 import java.util.*;
 public class count_sub_sets {
     public static int countsubsets(int arr[],int n,int sum,int s,int count) {

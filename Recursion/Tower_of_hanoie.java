@@ -1,4 +1,4 @@
-package Day7;
+package Recursion;
 import java.util.*;
 public class Tower_of_hanoie {
     public static void TOH(int n,char a,char b,char c) {

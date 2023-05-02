@@ -1,4 +1,4 @@
-package Day7;
+package Recursion;
 import java.util.*;
 public class One_to_n {
     public static void printN(int n) {
