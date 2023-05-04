@@ -1,6 +1,6 @@
 package Day12;
 import java.util.*;
-public class first_occurence {
+public class first_Last_occurence_and_NoOccuranceOfNumber {
     public static int Firstoccurence(int []arr,int start,int end,int x) {
         if(start>end){
             return -1;
@@ -21,8 +21,8 @@ public class first_occurence {
             }
         }
     }
-    public static int Firstoccurence1(int []arr,int x) {//iterative approach
-        int start=0,end=arr.length-1;
+    public static int Firstoccurence1(int []arr,int x,int n) {//iterative approach
+        int start=0,end=arr.length-1,res=-1;
         while(start<=end){
             int median=(start+end)/2;
             if(arr[median]<x){
@@ -32,18 +32,20 @@ public class first_occurence {
                 return end=median-1;
             }
             else{
-                if(median==0 || arr[median-1]!=arr[median]){
+                /*if(median==0 || arr[median-1]!=arr[median]){
                     return median;
                 }
                 else{
                     return end=median-1;
-                }
+                }*/
+                res=median;
+                end=median-1;
             }
         }
-        return -1;
+        return res;
     }
-    public static int Lastoccrance(int []arr,int x) {//iterative approach
-        int start=0,end=arr.length-1;
+    public static int Lastoccrance(int []arr,int x,int n) {//iterative approach
+        int start=0,end=n-1,res=-1;
         while(start<=end){
             int median=(start+end)/2;
             if(arr[median]<x){
@@ -53,15 +55,17 @@ public class first_occurence {
                 return end=median-1;
             }
             else{
-                if(median!=arr.length-1 || arr[median]!=arr[median+1]){
+                /*if(median!=arr.length-1 || arr[median]!=arr[median+1]){
                     return median;
                 }
                 else{
                     return start=median+1;
-                }
+                }*/
+                res=median;
+                end=median+1;
             }
         }
-        return -1;
+        return res;
     }
     public static int Lastoccrance1(int []arr,int start,int end,int x) {
         if(start>end){
@@ -83,11 +87,22 @@ public class first_occurence {
             }
         }
     }
+   public static int NoOfOccuranceNumber(int []arr,int x,int n) {
+        int first=Firstoccurence1(arr,x,n);
+        if(first==-1){
+            return 0;
+        }
+        else{
+            return (Lastoccrance(arr,x,n)-first+1);
+        }
+    }
     public static void main(String args[]) {
-        int arr[]={10,10,10,20,20};
+        int arr[]={10,10,20,20,20,30,30};
+        int n=arr.length;
         System.out.println(Firstoccurence(arr, 0, arr.length-1, 10));
-        System.out.println(Firstoccurence1(arr, 20));
-        System.out.println(Lastoccrance(arr, 10));
-        System.out.println(Lastoccrance1(arr, 0, arr.length-1, 10));
+        System.out.println(Firstoccurence1(arr, 20,n));
+        System.out.println(Lastoccrance(arr, 10,n));
+        System.out.println(Lastoccrance1(arr, 0, arr.length-1, 20));
+        System.out.println(NoOfOccuranceNumber(arr, 10,n));
     }
 }
