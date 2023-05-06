@@ -103,3 +103,21 @@
     <li>Shuffle the array</li>
     <li>Traping water problem</li>
  </ul>
+<h1>Day9(Bits Manupulation)</h1>
+<h3>on This day i have study about bits and its operations and question</h3>
+<ul><li>Bits Masking</li>
+    <li>Bits magic</li>
+    <li>clear bits</li>
+    <li>No of bits to convert a to b</li>
+    <li>Even and odd using Xor operation</li>
+    <li>Number of ones in number</li>
+    <li>No of bits(0,1) in a number</li>
+    <li>Power of two</li>
+    <li>Reverse of bits</li>
+    <li>set bits in number</li>
+    <li>Swaping using Xor operator</li>
+    <li>Traling of zeros</li>
+    <li>Updating bits in number</li>
+    <li>Xor between a range</li>
+    <li>Xor of two number without Xor</li>
+ </ul>
