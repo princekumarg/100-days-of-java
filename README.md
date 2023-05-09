@@ -121,3 +121,11 @@
     <li>Xor between a range</li>
     <li>Xor of two number without Xor</li>
  </ul>
+<h1>Day10(TypeConversion)</h1>
+<h3>on This day i have study about conversion one data type to another</h3>
+<ul><li>Binary to decimal</li>
+    <li>Daily use Type</li>
+    <li>Playing with diffrrent dattypes</li>
+    <li>Operation Types</li>
+    <li>All types of data</li>
+</ul>
