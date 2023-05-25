@@ -129,3 +129,21 @@
     <li>Operation Types</li>
     <li>All types of data</li>
 </ul>
+<h1>Day11(Searching)</h1>
+<h3>on This day i have study about Searching elements in an array</h3>
+<ul><li>Binary Search</li>
+    <li>counts True in an array</li>
+    <li>Maximum Occuring elements</li>
+    <li>duplicates in an array</li>
+    <li>Find occurance of elements in a range</li>
+    <li>Find first and last occurance in an array</li>
+    <li>median of two arrays</li>
+    <li>pair sum using binary search</li>
+    <li>peak elements in array</li>
+    <li>Reapting elements in array</li>
+    <li>Searching in infinite array</li>
+    <li>Search rotated array</li>
+    <li>linear search</li>
+    <li>Seaarching in inserted array</li>
+    <li>sqrt using searching</li>
+</ul>
