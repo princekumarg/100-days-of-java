@@ -16,7 +16,7 @@ public class max_sum_sub_array {
         for(int i=0;i<nums.length;i++){
             int sum=0;// for public
             for(int j=i;j<nums.length;j++){
-                sum=sum+arr[i];
+                sum=sum+arr[i];//sout(sum) to print array.
                 if(sum>max){
                     max=sum;
                 }

@@ -1,4 +1,4 @@
-package Day9;
+package BitsManuplation;
 import java.util.*;
 public class set_bit {
     public static void main(String args[]) {

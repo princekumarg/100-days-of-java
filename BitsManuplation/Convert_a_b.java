@@ -1,4 +1,4 @@
-package Day9;
+package BitsManuplation;
 import java.util.*;
 public class Convert_a_b {
     public static int countSetBits(int n) {

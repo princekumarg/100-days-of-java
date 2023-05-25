@@ -8,7 +8,7 @@ public class maximum_circular_sum_sub_array {
             int curr_max=arr[i];
             for(int j=1;j<arr.length;j++){
                 int index=(i+j)%arr.length;
-                curr_sum=curr_max+arr[index];
+                curr_sum=curr_sum+arr[index];
                 curr_max=Math.max(curr_max,curr_sum);
             }
             res=Math.max(res,curr_max);

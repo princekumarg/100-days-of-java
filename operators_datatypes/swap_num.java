@@ -1,15 +1,15 @@
-package operators_datatypes;
 import java.util.*;
-public class swap_num {
-    public static void main(String args[]){
+public class Swap
+{
+    public static void main(String []args)
+    {
         int a=5,b=10;
-        System.out.println("1st number before swap=" +a);
-        System.out.println("2nd number before swap=" +b);
+        System.out.println("first number"+a);
+        System.out.println("second number"+b);
         int sw=a;
         a=b;
         b=sw;
-        System.out.println("1st number after swap=" +a);
-        System.out.println("2nd number after swap=" +b);
+        System.out.println("1st number after swap="+a);
+        System.out.println("2nd number after swap="+b);
     }
-
 }

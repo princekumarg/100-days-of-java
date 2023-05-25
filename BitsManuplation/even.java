@@ -1,4 +1,4 @@
-package Day9;
+package BitsManuplation;
 import java.util.*;
 public class even {
     public static void main(String args[]) {

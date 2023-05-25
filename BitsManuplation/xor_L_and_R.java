@@ -1,4 +1,4 @@
-package Day9;
+package BitsManuplation;
 import java.util.*;
 public class xor_L_and_R {
     public static int find_xor(int n) {

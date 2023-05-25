@@ -1,4 +1,4 @@
-package Day9;
+package BitsManuplation;
 import java.util.*;
 public class power_of_2 {
     public static void main(String args[]) {
