@@ -1,5 +1,4 @@
 package Array;
-import java.util.*;
 public class array_operation {
     public static int search(int arr[],int x,int n) {
         for(int i=0;i<n;i++){
