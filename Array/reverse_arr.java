@@ -28,6 +28,7 @@ public class reverse_arr {
         for(int k=0;k<n;k++){
             System.out.print(arr[k]+" ");
         }
+        reverse(arr);
     }
     public static void revrse(int []arr,int n) {
         int low=0,high=n-1;
@@ -37,6 +38,19 @@ public class reverse_arr {
             arr[high]=temp;
             low++;
             high--;
+        }
+    }
+    public static void reverse(int a[]){
+        int[] b = new int[a.length];
+        int j = a.length;
+        for (int i = 0; i < a.length; i++) {
+            b[j - 1] = a[i];
+            j = j - 1;
+        }
+        // printing the reversed array
+        System.out.println("Reversed array is: \n");
+        for (int k = 0; k < a.length; k++) {
+            System.out.println(b[k]);
         }
     }
 }
