@@ -52,7 +52,7 @@ public class leftmostArray {
         return res;
     }
     public static void main(String[] args) {
-        String str="geeksforge";
+        String str="geeksforgeeks";
         System.out.println(leftmost(str));
         System.out.println(leftmost1(str));
         System.out.println(leftmost2(str));

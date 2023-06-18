@@ -1,4 +1,4 @@
-package Array;
+package Searching;
 public class Leader_in_Array{
     public static void Leaders(int arr[],int n) {
         for(int i=0;i<n;i++){

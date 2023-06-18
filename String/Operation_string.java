@@ -34,5 +34,17 @@ public class Operation_string {
             System.out.println("No");
         }
         System.out.println(str.contains(s2));//contain
+        for(int i=0;i<8;i++){
+            System.out.print((char)('a'+i)+" ");//print chart from a to h
+        }
+        System.out.println();
+        StringBuilder str1=new StringBuilder("abcd");//String builder and its operation
+        str1.append("def");
+        str1.setCharAt(2,'g');
+        System.out.print(str1);
+        str1.reverse();
+        System.out.println(str1);
+
+
     }
 }
