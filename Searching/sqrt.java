@@ -1,7 +1,5 @@
 package Searching;
 import java.util.*;
-
-import javax.sound.midi.MidiDeviceReceiver;
 public class sqrt {
     public static int sqrt(int n) {
         int i=1;

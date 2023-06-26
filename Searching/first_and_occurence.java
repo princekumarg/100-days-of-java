@@ -41,9 +41,7 @@ public class first_and_occurence {
         int nums[]={5,7,7,8,8,10};
         int target=8;
         findFirstAndLast(nums,target);
-       /*  int x=searchRange(nums, target);
-        for(int i=0;i<nums.length;i++){
-            System.out.println(x);
-        }*/
+        for(int x : searchRange(nums , target))
+            System.out.print(x + " ");
     }
 }
