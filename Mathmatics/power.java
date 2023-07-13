@@ -42,10 +42,10 @@ public class power {
             nn = -1 * nn;
         }
         while (nn > 0) {
-            if (nn % 2 == 1) {
+            if (nn % 2 == 1) {// (4^5)=(4*4^4)
                 ans = ans * x;
                 nn = nn - 1;
-            } else {
+            } else {// (2^10)=(4^5)=((2*2)^5
                 x = x * x;
                 nn = nn / 2;
             }
