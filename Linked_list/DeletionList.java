@@ -24,6 +24,29 @@ public class DeletionList {
         return head;
     }
 
+    public Node removeNthFromEnd(Node head, int n) {// leetcode
+        Node curr = head;
+        Node prev = null;
+        Node start = null;
+        while (curr != null) {
+            n = n - 1;
+            curr = curr.next;
+            if (n <= 0) {
+                if (start == null) {
+                    start = head;
+                } else {
+                    prev = start;
+                    start = start.next;
+                }
+            }
+        }
+        if (prev == null) {
+            return start.next;
+        }
+        prev.next = start.next;
+        return head;
+    }
+
     public static void main(String[] args) {
         Node head = new Node(10);
         head.next = new Node(20);
