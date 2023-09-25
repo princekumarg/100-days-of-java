@@ -23,9 +23,9 @@ public class missing_index {
         for(int i=1;i<arr.length;i++) {
             x1=x1^arr[i];
         }
-        for(int i=2;i<arr.length;i++) {
+        for(int i=2;i<arr.length+1;i++) {
             x2=x2^i;
         }
-        return (x2^x1) ;
+        return (x1^x2) ;
         
 }
