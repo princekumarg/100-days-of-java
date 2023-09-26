@@ -1,4 +1,4 @@
-package Linked_list;
+package Leetcode;
 
 public class PerfectSq {
     public static int numSquares(int n) {
