@@ -1,7 +1,23 @@
 package Arrays;
 
 public class TrapingWater {
-    public static int water_level(int A[]) {
+    public static int water_level1(int A[]) {// 0(n^2)
+        int res = 0;
+        for (int i = 1; i < A.length; i++) {
+            int left = A[i];
+            for (int j = 0; j < i; j++) {
+                left = Math.max(left, A[j]);
+            }
+            int right = A[i];
+            for (int j = i; j < A.length; j++) {
+                right = Math.max(right, A[j]);
+            }
+            res = res + Math.min(left, right) - A[i];
+        }
+        return res;
+    }
+
+    public static int water_level(int A[]) { // 0(n)
         int res = 0;
         if (A.length == 0) {
             return 0;
