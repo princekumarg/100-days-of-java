@@ -12,6 +12,19 @@ public class ArrayCreation {
         return false;
     }
 
+    public static int kthindex(int arr[], int x, int N) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                count++;
+            }
+            if (count == N) {
+                count = i + 1;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
@@ -24,6 +37,7 @@ public class ArrayCreation {
         }
         int x = 2;
         System.out.println(search(arr, x));
+        System.out.println(kthindex(arr, x, 5));
 
     }
 }
