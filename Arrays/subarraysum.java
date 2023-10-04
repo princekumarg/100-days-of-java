@@ -40,6 +40,19 @@ public class subarraysum {
         return maxi;
     }
 
+    public static int kandlealgorithmmain(int arr[]) {
+        int curr = 0;
+        int maxi = Integer.MIN_VALUE;
+        for (int i : arr) {
+            curr = curr + i;
+            maxi = Math.max(maxi, curr);
+            if (curr < 0) {
+                curr = 0;
+            }
+        }
+        return maxi;
+    }
+
     public static int circluarsum(int[] arr, int n) {
         int res = arr[0];
         for (int i = 0; i < n; i++) {
@@ -67,5 +80,6 @@ public class subarraysum {
         System.out.println();
         System.out.println(kandlealgorithm(arr, n));
         System.out.println(circluarsum(arr, n));
+        System.out.println(kandlealgorithmmain(arr));
     }
 }
