@@ -12,17 +12,17 @@ public class ArrayCreation {
         return false;
     }
 
-    public static int kthindex(int arr[], int x, int N) {
+    public static int kthindex(int arr[], int x, int k) {//
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == x) {
                 count++;
             }
-            if (count == N) {
-                count = i + 1;
+            if (count == k) {
+                return i + 1;
             }
         }
-        return count;
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -36,8 +36,9 @@ public class ArrayCreation {
             System.out.print(arr[i] + " ");
         }
         int x = 2;
+        int k = 3;
         System.out.println(search(arr, x));
-        System.out.println(kthindex(arr, x, 5));
+        System.out.println(kthindex(arr, x, k));
 
     }
 }
