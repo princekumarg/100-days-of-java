@@ -45,4 +45,8 @@ public class MyStackArr {
     public boolean isEmpty() {
         return top == -1;
     }
+
+    public boolean isFull() {
+        return top == cap - 1;
+    }
 }
