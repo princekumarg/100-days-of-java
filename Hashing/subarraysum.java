@@ -1,6 +1,8 @@
 package Hashing;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class subarraysum {
     public static boolean subarrsum(int arr[], int sum) {
@@ -32,10 +34,26 @@ public class subarraysum {
         return false;
     }
 
+    public static int summisk(int arr[], int k) {
+        int sum = 0, result = 0;
+        Map<Integer, Integer> hm = new HashMap<>();
+        hm.put(0, 1);
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+            if (hm.containsKey(sum - k)) {
+                result = result + hm.get(sum - k);
+            }
+            hm.put(sum, hm.getOrDefault(sum, 0) + 1);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 5, 8, 6, 13, 3, -1 };
         int sum = 22;
+        int k = 2;
         System.out.println(subarrsum(arr, sum));
         System.out.println(issum(arr, sum));
+        System.out.println(summisk(arr, k));
     }
 }
