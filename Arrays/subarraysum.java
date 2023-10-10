@@ -53,6 +53,22 @@ public class subarraysum {
         return maxi;
     }
 
+    public static int kndlealgorithmii(int arr[]){
+        int total=0;
+        int currmaxsum=0;
+        int currminsum=0;
+        int maxsum=0;
+        int minsum=0;
+        for(int x:arr){
+            total=total+x;
+            currmaxsum=Math.max(currmaxsum+x,x);
+            currminsum=Math.min(currminsum+x,x);
+            maxsum=Math.max(maxsum,currmaxsum);
+            minsum=Math.min(minsum,currminsum);
+        }
+        return maxsum<0?:maxsum:Math.max(maxsum,total-minsum);
+    }
+
     public static int circluarsum(int[] arr, int n) {
         int res = arr[0];
         for (int i = 0; i < n; i++) {
