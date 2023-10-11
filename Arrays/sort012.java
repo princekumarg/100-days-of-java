@@ -3,7 +3,7 @@ package Arrays;
 public class sort012 {
     public static void sortelem(int arr[]) {
         int start = 0, mid = 0, end = arr.length - 1;
-        while (start <= end) {
+        while (mid <= end) {
             if (arr[mid] == 0) {
                 int temp = arr[start];
                 arr[start] = arr[mid];
