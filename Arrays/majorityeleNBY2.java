@@ -4,7 +4,7 @@ public class majorityeleNBY2 {
     public static int majority(int arr[]) {
         int n = arr.length;
         int cnt = 0;
-        int el = 0;
+        int el = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
             if (cnt == 0) {
                 cnt = 1;
