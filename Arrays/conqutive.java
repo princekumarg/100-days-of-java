@@ -47,11 +47,36 @@ public class conqutive {
         return cnt;
     }
 
+    public static boolean palinderom(int n) {
+        int temp = n;
+        int rev = 0;
+        while (n != 0) {
+            int rem = n % 10;
+            rev = rev * 10 + rem;
+            n = n / 10;
+        }
+        if (temp == rev) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean pallindromarray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            if (palinderom(arr[i]) == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 5, 10, 20, 6, 3, 8 };
         int n = arr.length;
         System.out.println(evenodd(arr, n));
         System.out.println(conseqtiveeven(arr, n));
         System.out.println(evencount(arr, n));
+        System.out.println(pallindromarray(arr));
     }
 }
