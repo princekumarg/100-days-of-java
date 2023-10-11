@@ -9,7 +9,7 @@ public class alternativeelement {
                 ans[neg] = arr[i];
                 neg = neg + 2;
             } else {
-                arr[pos] = arr[i];
+                ans[pos] = arr[i];
                 pos = pos + 2;
             }
         }
