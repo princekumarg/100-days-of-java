@@ -6,7 +6,8 @@
     <li>How to take input and Print output in java</li>
     <li>All types operator in java</li>
     <li>Swap of number using 3rd variables</li>
-    <li>Swap of number using operator</li>
+    <li>Swap of number using operatr</li>
+    <li>Sonu kumar</li>
  </ul>
  <h1>Day2(if, else and switch statement)</h1>
  <h3>on This day i have study about if,else and switch statement</h3>
