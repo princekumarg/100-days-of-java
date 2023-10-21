@@ -37,10 +37,36 @@ public class FrequencyArr {
         }
     }
 
+    public static int[] printmaxmin(int arr[], int n) {
+        HashMap<Integer, Integer> mp = new HashMap<>();
+        for (int x : arr) {
+            if (mp.containsKey(x)) {
+                mp.put(x, mp.get(x) + 1);
+            } else {
+                mp.put(x, 1);
+            }
+        }
+        int max = 0, min = 0;
+        for (Map.Entry<Integer, Integer> entry : mp.entrySet()) {
+            if (entry.getValue() > max) {
+                max = entry.getValue();
+            }
+            if (entry.getValue() < min) {
+                min = entry.getValue();
+            }
+        }
+        int res[] = new int[2];
+        res[0] = max;
+        res[1] = min;
+        return res;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 10, 10, 10, 20, 30, 10 };
         int n = arr.length;
         printFreq(arr, n);
         printFreq1(arr, n);
+        int res[] = printmaxmin(arr, n);
+        System.out.print(res[0] + " " + res[1]);
     }
 }

@@ -1,6 +1,25 @@
 package Arrays;
 
+import java.util.ArrayList;
+
 public class subarraysum {
+    public static ArrayList<Integer> subarraysumindex(int[] arr, int n, int k) {
+        int sum = 0;
+        ArrayList<Integer> res = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            sum = arr[i];
+            for (int j = i + 1; j < n; j++) {
+                sum = sum + arr[j];
+                if (sum == k) {
+                    res.add(i);
+                    res.add(j);
+                    return res;
+                }
+            }
+        }
+        return res;
+    }
+
     public static int sumsubarrayindex(int[] arr, int n, int k) {
         int sum = 0;
         int res = 0;
