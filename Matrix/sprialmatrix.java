@@ -35,6 +35,7 @@ public class sprialmatrix {
         return ls;
     }
 
+    // in array return arr[n*m] and put c=0,and arr[c++]=matrix[top][i] and so on
     public static void main(String[] args) {
         int matrix[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
         List<Integer> ls = sprialmatrixcks(matrix);
