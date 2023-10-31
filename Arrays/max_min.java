@@ -23,6 +23,24 @@ public class max_min {
         return min;
     }
 
+    public static int removeminimax(int arr[], int n) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int maxi = 0, mini = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                maxi = i;
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                mini = i;
+            }
+        }
+        return Math.min(Math.max(maxi + 1, min + 1),
+                Math.min(Math.max(n - maxi, n - mini), Math.max(maxi + 1 + n - mini, mini + n - maxi)));
+    }
+
     public static int maximum1(int arr[], int n) {
         int max = arr[0];
         for (int i = 0; i < n; i++) {
