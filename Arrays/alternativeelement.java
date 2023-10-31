@@ -57,10 +57,11 @@ public class alternativeelement {
         int ans[] = alternativenegpos(arr);
         int ans1[] = alternativevenodd(arr1);
         for (int i = 0; i < ans.length; i++) {
-            System.out.println(ans[i] + " ");
+            System.out.print(ans[i] + " ");
         }
+        System.out.println();
         for (int i = 0; i < ans1.length; i++) {
-            System.out.println(ans1[i] + " ");
+            System.out.print(ans1[i] + " ");
         }
         int arr2[] = { 1, 2, 3, 4, 5, 6 };
         int ans2[] = alternativemax(arr2, arr2.length);
