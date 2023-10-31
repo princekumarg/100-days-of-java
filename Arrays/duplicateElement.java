@@ -53,6 +53,16 @@ public class duplicateElement {
         return j;
     }
 
+    public static int removeeven(int arr[]) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                arr[count++] = arr[i];
+            }
+        }
+        return count;
+    }
+
     public static int removeDuplicates(ArrayList<Integer> arr, int n) {
         // Write your code here.
         int i = 1;
