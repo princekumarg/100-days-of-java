@@ -9,11 +9,10 @@ public class majorityNBY3 {
         int el1 = Integer.MIN_VALUE, el2 = Integer.MIN_VALUE;
         int n = arr.length;
         for (int i = 0; i < n; i++) {
-            if (cnt1 == 0 && el1 != arr[i]) {
+            if (cnt1 == 0 && el2 != arr[i]) {
                 cnt1 = 0;
                 el1 = arr[i];
-            }
-            if (cnt2 == 0 && el2 != arr[i]) {
+            } else if (cnt2 == 0 && el1 != arr[i]) {
                 cnt2 = 0;
                 el2 = arr[i];
             } else if (el1 == arr[i]) {
