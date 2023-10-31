@@ -32,20 +32,13 @@ public class alternativeelement {
     }
 
     public static int[] alternativemax(int arr2[], int n) {
+        int max = n - 1, min = 0;
         int ans[] = new int[n];
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        int maxi = 0, mini = 1;
         for (int i = 0; i < n; i++) {
-            if (arr2[i] > max) {
-                max = Math.max(max, arr2[i]);
-                ans[maxi] = arr2[i];
-                maxi = maxi + 2;
-            }
-            if (arr2[i] < min) {
-                min = Math.min(min, arr2[i]);
-                ans[mini] = arr2[i];
-                mini = mini + 2;
+            if (i % 2 == 0) {
+                ans[i] = arr2[max--];
+            } else {
+                ans[i] = arr2[min++];
             }
         }
         return ans;
@@ -64,9 +57,10 @@ public class alternativeelement {
             System.out.print(ans1[i] + " ");
         }
         int arr2[] = { 1, 2, 3, 4, 5, 6 };
+        System.out.println();
         int ans2[] = alternativemax(arr2, arr2.length);
         for (int i = 0; i < ans2.length; i++) {
-            System.out.println(ans2[i] + " ");
+            System.out.print(ans2[i] + " ");
         }
     }
 }
