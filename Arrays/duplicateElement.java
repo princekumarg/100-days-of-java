@@ -55,7 +55,7 @@ public class duplicateElement {
 
     public static int removeeven(int arr[]) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {// for some val arr[i]!=val
             if (arr[i] % 2 != 0) {
                 arr[count++] = arr[i];
             }
