@@ -76,16 +76,16 @@ public class subarraysum {
         int total = 0;
         int currmaxsum = 0;
         int currminsum = 0;
-        int maxsum = 0;
-        int minsum = 0;
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
         for (int x : arr) {
             total = total + x;
             currmaxsum = Math.max(currmaxsum + x, x);
             currminsum = Math.min(currminsum + x, x);
-            maxsum = Math.max(maxsum, currmaxsum);
-            minsum = Math.min(minsum, currminsum);
+            max = Math.max(max, currmaxsum);
+            min = Math.min(min, currminsum);
         }
-        return maxsum < 0 ? maxsum : Math.max(maxsum, total - minsum);
+        return max < 0 ? max : Math.max(max, total - min);
     }
 
     public static int circluarsum(int[] arr, int n) {
