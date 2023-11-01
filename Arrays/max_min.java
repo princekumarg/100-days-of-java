@@ -106,13 +106,6 @@ public class max_min {
 
     }
 
-    public static int maxproduct(int[] arr) {
-        Arrays.sort(arr);
-        int option1 = arr[0] * arr[1] * arr[arr.length - 1];
-        int option2 = arr[arr.length - 1] * arr[arr.length - 2] * arr[arr.length - 3];
-        return Math.max(option1, option2);
-    }
-
     public static int maxdiff(int arr[], int n) {
         int min = arr[0], max = arr[0];
         for (int i = 0; i < n; i++) {
