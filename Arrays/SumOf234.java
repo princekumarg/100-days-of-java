@@ -22,8 +22,32 @@ public class SumOf234 {
         return ans;
     }
 
+    public static List<List<Integer>> FourSum(int arr[], int target) {
+        Set<List<Integer>> sl = new HashSet<>();
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                Set<Integer> s = new HashSet<>();
+                for (int k = j + 1; k < n; k++) {
+                    int rem = target - (arr[i] + arr[j] + arr[k]);
+                    if (s.contains(rem)) {
+                        List<Integer> ls = Arrays.asList(arr[i], arr[j], arr[k], rem);
+                        ls.sort(null);
+                        sl.add(ls);
+                    }
+                    s.add(arr[k]);
+                }
+            }
+        }
+        List<List<Integer>> ll = new ArrayList<>(sl);
+        return ll;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5, 6 };
-
+        List<List<Integer>> ans = ThreeSum(arr);
+        System.out.println(ans);
+        List<List<Integer>> ans1 = FourSum(arr, 10);
+        System.out.println(ans1);
     }
 }
