@@ -11,6 +11,10 @@ public class bit_masking {
         System.out.println(updatebits(n, i, 1));
         System.out.println(clearLastIbits(n, i));
         System.out.println(togglingbits(n, i));
+        System.out.println(counttotalbits(n, i));
+        System.out.println(powerof2(n));
+        System.out.println(checkevenorodd(n));
+        swap(n, i);
     }
 
     public static int bitmasking(int i) {
@@ -51,5 +55,32 @@ public class bit_masking {
     public static int togglingbits(int n, int i) {
         int mask = bitmasking(i);
         return n ^ mask;
+    }
+
+    public static int counttotalbits(int n, int i) {
+        return (int) (Math.log(n) / Math.log(i)) + 1;
+    }
+
+    public static String powerof2(int n) {
+        if ((n & (n - 1)) == 0) {
+            return "yes";
+        } else {
+            return "no";
+        }
+    }
+
+    public static String checkevenorodd(int n) {
+        if ((n & 1) == 1) {
+            return "odd";
+        } else {
+            return "even";
+        }
+    }
+
+    public static void swap(int n, int i) {
+        n = n ^ i;
+        i = n ^ i;
+        n = n ^ i;
+        System.out.println(n + " " + i);
     }
 }
