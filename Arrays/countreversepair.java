@@ -55,7 +55,7 @@ public class countreversepair {
 
     public static int MergeSort(int arr[], int low, int high) {
         int count = 0;
-        if (low <= high) {
+        if (low >= high) {
             return count;
         }
         int mid = (low + high) / 2;
