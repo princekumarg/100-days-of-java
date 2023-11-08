@@ -21,6 +21,24 @@ public class mergeSort {
         Arrays.sort(arr2);
     }
 
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int right = 0;
+        int left = m - 1;
+        while (right < n && left >= 0) {
+            if (nums1[left] > nums2[right]) {
+                int temp = nums1[left];
+                nums1[left] = nums2[right];
+                nums2[right] = temp;
+                right++;
+                left--;
+            } else {
+                break;
+            }
+        }
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+    }
+
     public static void main(String[] args) {
         int arr1[] = { 1, 3, 5, 7 };
         int arr2[] = { 0, 2, 6, 8, 9 };
