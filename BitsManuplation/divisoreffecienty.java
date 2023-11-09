@@ -1,4 +1,4 @@
-package BST;
+package BitsManuplation;
 
 public class divisoreffecienty {
     public static int divide(int dividend, int divisor) {
@@ -22,9 +22,36 @@ public class divisoreffecienty {
         return sign ? -quotient : quotient;
     }
 
+    public static int counttoggle(int A, int B) {
+        int count = 0;
+        int C = A ^ B;
+        while (C != 0) {
+            C = C & (C - 1);
+            count++;
+        }
+        return count;
+    }
+
+    public static int counttoggle1(int A, int B) {
+        int count = 0;
+        int i = 0;
+        while (i < 32) {
+            int mask = 1 << i;
+            int bit1 = A & mask;
+            int bit2 = B & mask;
+            if (bit1 != bit2) {
+                count++;
+            }
+            i++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         int dividend = 10;
         int divisor = 3;
         System.out.println(divide(dividend, divisor));
+        System.out.println(counttoggle(dividend, divisor));
+        System.out.println(counttoggle1(dividend, divisor));
     }
 }
