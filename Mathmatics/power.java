@@ -23,7 +23,7 @@ public class power {
         }
     }
 
-    public static double myPow(double x, int n) {
+    public static double myPow(double x, int n) {// leetcode
         double ans = 1.0;
         long nn = n;
         if (nn < 0) {
@@ -44,6 +44,25 @@ public class power {
         return ans;
     }
 
+    public static long poweress(int x, int n) {
+        if (n == 0) {
+            return 0;
+        }
+        long temp = poweress(x, n / 2);
+        if (n % 2 == 0) {
+            return (long) (temp * temp) % 1000000007;
+        } else {
+            return (long) (temp * temp * x) % 1000000007;
+        }
+    }
+
+    public static int goodno(int n) {
+        int mod = 1000000007;
+        int odd = (n + 1) / 2;
+        int even = n / 2;
+        return (int) (poweress(5, even) * poweress(4, odd)) % mod;
+    }
+
     public static void main(String args[]) {
         Scanner s = new Scanner(System.in);
         int x = s.nextInt();
@@ -51,5 +70,7 @@ public class power {
         System.out.println(powers(x, n));
         System.out.println(powers1(x, n));
         System.out.println(myPow(x, n));
+        System.out.println(poweress(x, n));
+        System.out.println(goodno(n));
     }
 }
