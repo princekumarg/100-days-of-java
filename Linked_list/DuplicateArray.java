@@ -16,10 +16,40 @@ public class DuplicateArray {
         return head;
     }
 
+    public static Node removEvenNode(Node head) {
+        Node curr = head;
+        if (head == null) {
+            return null;
+        }
+        while (curr.next != null) {
+            if (curr.data % 2 == 0) {
+                curr = curr.next;
+            } else {
+                curr.next = curr.next.next;
+            }
+        }
+        return head;
+    }
+
+    public static Node removeNegNode(Node head) {
+        Node curr = head;
+        if (head == null) {
+            return null;
+        }
+        while (curr.next != null) {
+            if (curr.data < 0) {
+                curr = curr.next;
+            } else {
+                curr.next = curr.next.next;
+            }
+        }
+        return head;
+    }
+
     public static void printlist(Node head) {
         Node curr = head;
         while (curr != null) {
-            System.out.println(curr.data);
+            System.out.print(curr.data + " ");
             curr = curr.next;
         }
     }
@@ -33,6 +63,12 @@ public class DuplicateArray {
         head.next.next.next.next.next = new Node(40);
         head.next.next.next.next.next.next = new Node(50);
         head = removeduplicate(head);
+        printlist(head);
+        System.out.println();
+        head = removEvenNode(head);
+        printlist(head);
+        System.out.println();
+        head = removeNegNode(head);
         printlist(head);
     }
 }
