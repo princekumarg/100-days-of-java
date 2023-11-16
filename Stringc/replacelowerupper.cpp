@@ -16,10 +16,23 @@ string replaceupperandlower(string s)
     }
     return res;
 }
+string removeduplicate(string s)
+{
+    string res;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] != s[i + 1])
+        {
+            res += s[i];
+        }
+    }
+    return res;
+}
 
 int main()
 {
     string s;
     cin >> s;
-    cout << replaceupperandlower(s);
+    cout << replaceupperandlower(s) << endl;
+    cout << removeduplicate(s);
 }
