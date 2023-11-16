@@ -28,11 +28,25 @@ string removeduplicate(string s)
     }
     return res;
 }
-
+string remove(string s)
+{
+    unordered_set<char> st;
+    string res;
+    for (int i = 0; i < s.length(); i++)
+    {
+        st.insert(s[i]);
+    }
+    for (char c : st)
+    {
+        res += c;
+    }
+    return res;
+}
 int main()
 {
     string s;
     cin >> s;
     cout << replaceupperandlower(s) << endl;
     cout << removeduplicate(s);
+    cout << remove(s);
 }
