@@ -16,6 +16,17 @@ string replaceupperandlower(string s)
     }
     return res;
 }
+bool parntestis(string s)
+{
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == s[s.length() - i - 1])
+        {
+            return true;
+        }
+    }
+    return false;
+}
 string removeduplicate(string s)
 {
     string res;
@@ -50,12 +61,12 @@ string vowelateven(string s)
     {
         if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
         {
-            ans += s[i];
+            ans += s[even];
             even = even + 2;
         }
         else
         {
-            ans += s[i];
+            ans += s[odd];
             odd = odd + 2;
         }
     }
@@ -75,6 +86,39 @@ string remove(string s)
     }
     return res;
 }
+char unique(string s)
+{
+    char arr[256];
+    string res;
+    for (int i = 0; i < s.length(); i++)
+    {
+        arr[s[i]]++;
+    }
+    for (int i = 0; i < 256; i++)
+    {
+        if (arr[s[i]] == 1)
+        {
+            res += s[i];
+        }
+    }
+    return res[0];
+}
+char uniquecharinarr(string s)
+{
+    char arr[256];
+    for (int i = 0; i < s.length(); i++)
+    {
+        arr[s[i]]++;
+    }
+    for (int i = 0; i < 256; i++)
+    {
+        if (arr[s[i]] == 1)
+        {
+            return s[i];
+        }
+    }
+    return '$';
+}
 int main()
 {
     string s;
@@ -83,5 +127,8 @@ int main()
     cout << removeduplicate(s) << endl;
     cout << removedduplicate1(s) << endl;
     cout << remove(s) << endl;
-    cout << vowelateven(s);
+    cout << vowelateven(s) << endl;
+    cout << parntestis(s) << endl;
+    cout << unique(s) << endl;
+    cout << uniquecharinarr(s);
 }
