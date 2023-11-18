@@ -106,6 +106,24 @@ public class max_min {
 
     }
 
+    public static int maxoccurance(int arr[], int n) {
+        int max = 0;
+        int count = 0;
+        int element = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+            if (count > max) {
+                max = count;
+                element = arr[i];
+            }
+        }
+        return element;
+    }
+
     public static int maxdiff(int arr[], int n) {
         int min = arr[0], max = arr[0];
         for (int i = 0; i < n; i++) {
@@ -116,7 +134,7 @@ public class max_min {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 4, 5 };
+        int arr[] = { 1, 2, 3, 5, 4, 5 };
         int n = arr.length;
         System.out.println(maximum(arr, n));
         System.out.println(minimum(arr, n));
@@ -129,7 +147,7 @@ public class max_min {
             System.out.print(res[i] + " ");
         }
         System.out.println();
-        System.out.println(maxproduct(arr));
         System.out.println(maxdiff(arr, n));
+        System.out.println(maxoccurance(arr, n));
     }
 }

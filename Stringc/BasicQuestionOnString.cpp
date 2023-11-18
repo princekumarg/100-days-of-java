@@ -50,6 +50,32 @@ string removespace(string s)
     }
     return res;
 }
+char maxOccChar(string s)
+{
+    char result; // Initialize to some default value
+    int max = 0;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        int count = 0; // Initialize count for each character
+
+        for (int j = 0; j < s.length(); j++)
+        {
+            if (s[i] == s[j])
+            {
+                count++;
+            }
+        }
+
+        if (count > max)
+        {
+            max = count;
+            result = s[i];
+        }
+    }
+
+    return result;
+}
 int main()
 {
     string s;
@@ -57,5 +83,6 @@ int main()
     cout << countchar(s) << endl;
     cout << reverse(s, 0, s.length() - 1) << endl;
     cout << palindrom(s) << endl;
-    cout << removespace(s);
+    cout << removespace(s) << endl;
+    cout << maxOccChar(s);
 }
