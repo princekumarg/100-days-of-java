@@ -1,5 +1,6 @@
 package String;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -58,8 +59,30 @@ public class removeduplicate {
                 max = arr[s.charAt(i)];
                 ans = s.charAt(i);
             }
+            if (arr[s.charAt(i)] == max && s.charAt(i) < ans) {
+                ans = s.charAt(i);
+            }
         }
         return ans;
+    }
+
+    public static char maxoccchar2(String s) {
+        Map<Character, Integer> m = new HashMap<>();
+        int max = 0;
+        char res = ' ';
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            m.put(ch, m.getOrDefault(ch, 0) + 1);
+            if (m.get(ch) > max) {
+                max = m.get(ch);
+                res = ch;
+            }
+            if (m.get(ch) == max && ch < res) {
+                res = ch;
+            }
+        }
+        return res;
+
     }
 
     public static String vowelateven(String s) {
@@ -86,10 +109,12 @@ public class removeduplicate {
     }
 
     public static void main(String[] args) {
-        String s = "zxvc zbt xyz vy";
+        String s = "zxvczbtxyzvy";
         // System.out.println(removeduplicateinarray(s));
         // System.out.println(vowelateven(s));
         // System.out.println(nonrepeatingCharacter(s));
         System.out.println(removespaceinstring(s));
+        System.out.println(maxoccchar(s));
+        System.out.println(maxoccchar2(s));
     }
 }

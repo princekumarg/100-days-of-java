@@ -76,7 +76,26 @@ char maxOccChar(string s)
     }
     return result;
 }
-
+char maxoccuringchar2(string s)
+{
+    int freq[26];
+    int max = 0;
+    char res;
+    for (int i = 0; i < 26; i++)
+    {
+        freq[s[i]]++;
+        if (freq[s[i]] > max)
+        {
+            max = freq[s[i]];
+            res = s[i];
+        }
+        if (freq[s[i]] == max && res > s[i])
+        {
+            res = s[i];
+        }
+    }
+    return res;
+}
 int main()
 {
     string s;
@@ -85,5 +104,6 @@ int main()
     cout << reverse(s, 0, s.length() - 1) << endl;
     cout << palindrom(s) << endl;
     cout << removespace(s) << endl;
-    cout << maxOccChar(s);
+    cout << maxOccChar(s) << endl;
+    cout << maxoccuringchar2(s);
 }
