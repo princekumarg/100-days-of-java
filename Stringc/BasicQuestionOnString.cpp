@@ -38,11 +38,24 @@ bool palindrom(string s)
     }
     return true;
 }
+string removespace(string s)
+{
+    string res;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] != ' ')
+        {
+            res += s[i];
+        }
+    }
+    return res;
+}
 int main()
 {
     string s;
     cin >> s;
-    cout << countchar(s) << endl;
-    cout << reverse(s, 0, s.length() - 1) << endl;
-    cout << palindrom(s);
+    // cout << countchar(s) << endl;
+    // cout << reverse(s, 0, s.length() - 1) << endl;
+    // cout << palindrom(s)<<endl;
+    cout << removespace(s);
 }

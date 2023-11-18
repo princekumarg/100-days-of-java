@@ -1,7 +1,9 @@
 package String;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class removeduplicate {
@@ -19,16 +21,29 @@ public class removeduplicate {
     }
 
     public static char nonrepeatingCharacter(String S) {
-        char ans[] = new char[S.length() + 1];
-        for (int i = 0; i < S.length(); i++) {
-            ans[S.charAt(i)]++;
+        Map<Character, Integer> m = new HashMap<>();
+        int n = S.length();
+        for (int i = 0; i < n; i++) {
+            char ch = S.charAt(i);
+            m.put(ch, m.getOrDefault(ch, 0) + 1);
         }
-        for (int i = 0; i < S.length(); i++) {
-            if (ans[S.charAt(i)] == 1) {
-                return S.charAt(i);
+        for (int i = 0; i < n; i++) {
+            char ch = S.charAt(i);
+            if (m.get(ch) == 1) {
+                return ch;
             }
         }
         return '$';
+    }
+
+    public static String removespaceinstring(String s) {
+        String ans = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ') {
+                ans += s.charAt(i);
+            }
+        }
+        return ans;
     }
 
     public static String vowelateven(String s) {
@@ -59,5 +74,6 @@ public class removeduplicate {
         System.out.println(removeduplicateinarray(s));
         System.out.println(vowelateven(s));
         System.out.println(nonrepeatingCharacter(s));
+        System.out.println(removespaceinstring(s));
     }
 }
