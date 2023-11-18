@@ -105,14 +105,14 @@ char unique(string s)
 }
 char uniquecharinarr(string s)
 {
-    char arr[256];
+    map<char, int> m;
     for (int i = 0; i < s.length(); i++)
     {
-        arr[s[i]]++;
+        m[s[i]]++;
     }
-    for (int i = 0; i < 256; i++)
+    for (int i = 0; i < s.length(); i++)
     {
-        if (arr[s[i]] == 1)
+        if (m[s[i]] == 1)
         {
             return s[i];
         }
