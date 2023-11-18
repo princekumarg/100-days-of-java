@@ -70,10 +70,10 @@ public class removeduplicate {
     }
 
     public static void main(String[] args) {
-        String s = "zxvczbtxyzvy";
-        System.out.println(removeduplicateinarray(s));
-        System.out.println(vowelateven(s));
-        System.out.println(nonrepeatingCharacter(s));
+        String s = "zxvc zbt xyz vy";
+        // System.out.println(removeduplicateinarray(s));
+        // System.out.println(vowelateven(s));
+        // System.out.println(nonrepeatingCharacter(s));
         System.out.println(removespaceinstring(s));
     }
 }

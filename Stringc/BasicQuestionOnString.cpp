@@ -54,8 +54,8 @@ int main()
 {
     string s;
     cin >> s;
-    // cout << countchar(s) << endl;
-    // cout << reverse(s, 0, s.length() - 1) << endl;
-    // cout << palindrom(s)<<endl;
+    cout << countchar(s) << endl;
+    cout << reverse(s, 0, s.length() - 1) << endl;
+    cout << palindrom(s) << endl;
     cout << removespace(s);
 }
