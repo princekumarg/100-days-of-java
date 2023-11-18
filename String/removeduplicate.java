@@ -46,6 +46,22 @@ public class removeduplicate {
         return ans;
     }
 
+    public static char maxoccchar(String s) {
+        int[] arr = new int[256];
+        int max = 0;
+        char ans = ' ';
+        for (int i = 0; i < s.length(); i++) {
+            arr[s.charAt(i)]++;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (arr[s.charAt(i)] > max) {
+                max = arr[s.charAt(i)];
+                ans = s.charAt(i);
+            }
+        }
+        return ans;
+    }
+
     public static String vowelateven(String s) {
         String ans = "";
         int even = 0, odd = 1;

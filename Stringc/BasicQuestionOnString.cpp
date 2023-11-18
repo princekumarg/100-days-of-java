@@ -50,6 +50,7 @@ string removespace(string s)
     }
     return res;
 }
+
 char maxOccChar(string s)
 {
     char result; // Initialize to some default value
@@ -73,9 +74,9 @@ char maxOccChar(string s)
             result = s[i];
         }
     }
-
     return result;
 }
+
 int main()
 {
     string s;
