@@ -114,7 +114,7 @@ public class String_basic_question {
         for (int i = 0; i < s.length(); i++) {
             for (int j = i + 1; j <= s.length(); j++) {
                 String res = s.substring(i, j);
-                if (res.equals(comp)) {// by this we can compare the values
+                if (res.equals(comp)) {// by this we can compare the string the values
                     return true;
                 }
 
