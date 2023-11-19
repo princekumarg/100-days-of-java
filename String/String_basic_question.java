@@ -112,15 +112,15 @@ public class String_basic_question {
 
     public static boolean substringcontain(String s, String comp) {
         for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 1; j < s.length(); j++) {
+            for (int j = i + 1; j <= s.length(); j++) {
                 String res = s.substring(i, j);
-                if (res != comp) {
-                    return false;
+                if (res.equals(comp)) {// by this we can compare the values
+                    return true;
                 }
 
             }
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
