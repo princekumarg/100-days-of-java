@@ -12,17 +12,17 @@ public class String_basic_question {
     }
 
     public static String reverse(String s) {
+        char ch[] = s.toCharArray();
         int start = 0;
         int end = s.length() - 1;
-        StringBuilder sb = new StringBuilder(s);
         while (start <= end) {
-            char temp = s.charAt(start);
-            sb.setCharAt(start, s.charAt(end));
-            sb.setCharAt(end, temp);
+            char temp = ch[start];
+            ch[start] = ch[end];
+            ch[end] = temp;
             start++;
             end--;
         }
-        return sb.toString();
+        return String.valueOf(ch);
     }
 
     public static boolean palindrom(String s) {
@@ -81,6 +81,35 @@ public class String_basic_question {
         return ans;
     }
 
+    public static boolean isvowel(char ch) {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o'
+                || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'O'
+                || ch == 'U') {
+            return true;
+        }
+        return false;
+    }
+
+    public static String reversevowel(String s) {
+        char ch[] = s.toCharArray();
+        int start = 0;
+        int end = s.length() - 1;
+        while (start <= end) {
+            if (!isvowel(ch[start])) {
+                start++;
+            } else if (!isvowel(ch[end])) {
+                end--;
+            } else {
+                char temp = ch[start];
+                ch[start] = ch[end];
+                ch[end] = temp;
+                start++;
+                end--;
+            }
+        }
+        return String.valueOf(ch);
+    }
+
     public static void main(String[] args) {
         String s = "aaabbcccc$";
         char temp = 'b';
@@ -90,5 +119,6 @@ public class String_basic_question {
         System.out.println(remove(s, temp));
         System.out.println(removevaluealphabet(s));
         System.out.println(vowelateven(s));
+        System.out.println(reversevowel(s));
     }
 }
