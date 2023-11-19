@@ -37,16 +37,6 @@ public class removeduplicate {
         return '$';
     }
 
-    public static String removespaceinstring(String s) {
-        String ans = "";
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != ' ') {
-                ans += s.charAt(i);
-            }
-        }
-        return ans;
-    }
-
     public static char maxoccchar(String s) {
         int[] arr = new int[256];
         int max = 0;
@@ -113,7 +103,6 @@ public class removeduplicate {
         // System.out.println(removeduplicateinarray(s));
         // System.out.println(vowelateven(s));
         // System.out.println(nonrepeatingCharacter(s));
-        System.out.println(removespaceinstring(s));
         System.out.println(maxoccchar(s));
         System.out.println(maxoccchar2(s));
     }

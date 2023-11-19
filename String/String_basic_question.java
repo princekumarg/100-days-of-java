@@ -110,9 +110,23 @@ public class String_basic_question {
         return String.valueOf(ch);
     }
 
+    public static boolean substringcontain(String s, String comp) {
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i + 1; j < s.length(); j++) {
+                String res = s.substring(i, j);
+                if (res != comp) {
+                    return false;
+                }
+
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         String s = "aaabbcccc$";
         char temp = 'b';
+        String comp = "abb";
         System.out.println(count(s, temp));
         System.out.println(reverse(s));
         System.out.println(palindrom(s));
@@ -120,5 +134,6 @@ public class String_basic_question {
         System.out.println(removevaluealphabet(s));
         System.out.println(vowelateven(s));
         System.out.println(reversevowel(s));
+        System.out.println(substringcontain(s, comp));
     }
 }
