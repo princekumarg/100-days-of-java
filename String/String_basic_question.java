@@ -1,5 +1,11 @@
 package String;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class String_basic_question {
     public static int count(String s, char temp) {
         int count = 0;
@@ -123,6 +129,79 @@ public class String_basic_question {
         return false;
     }
 
+    public static boolean substringcontain1(String str, String comp) {
+        boolean res = str.contains(comp);
+        return res;
+    }
+
+    public static String removeduplicate(String s) {
+        Set<Character> hs = new LinkedHashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            hs.add(s.charAt(i));
+        }
+        String ans = "";
+        for (char x : hs) {
+            ans += x;
+        }
+        return ans;
+    }
+
+    public static char maxoccchar(String s) {
+        int[] arr = new int[256];
+        int max = 0;
+        char res = ' ';
+        for (int i = 0; i < s.length(); i++) {
+            arr[s.charAt(i)]++;
+            if (arr[s.charAt(i)] > max) {
+                max = arr[s.charAt(i)];
+                res = s.charAt(i);
+            }
+            if (arr[s.charAt(i)] == max && s.charAt(i) < res) {
+                res = s.charAt(i);
+            }
+        }
+        return res;
+    }
+
+    public static char nonreptingchar(String s) {
+        Map<Character, Integer> m = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            m.put(ch, m.getOrDefault(ch, 0) + 1);
+        }
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (m.get(ch) == 1) {
+                return ch;
+            }
+        }
+        return '$';
+    }
+
+    public static String uppertolower(String s) {
+        String ans = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') {
+                ans += (char) (s.charAt(i) + 32);// ans+=s.toLowerCase();
+            } else {
+                ans += (char) (s.charAt(i) - 32);
+            }
+        }
+        return ans;
+    }
+
+    public static String upperlower(String s) {
+        String ans = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') {
+                ans += s.toLowerCase();
+            } else {
+                ans += s.toUpperCase();
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         String s = "aaabbcccc$";
         char temp = 'b';
@@ -135,5 +214,10 @@ public class String_basic_question {
         System.out.println(vowelateven(s));
         System.out.println(reversevowel(s));
         System.out.println(substringcontain(s, comp));
+        System.out.println(substringcontain1(s, comp));
+        System.out.println(removeduplicate(s));
+        System.out.println(maxoccchar(s));
+        System.out.println(nonreptingchar(s));
+        System.out.println(uppertolower(s));
     }
 }
