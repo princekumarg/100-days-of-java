@@ -1,5 +1,6 @@
 package String;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -64,6 +65,20 @@ public class String_basic_question {
             }
         }
         return ans;
+    }
+
+    public static String sortingthestring(String str2) {
+        String ans = "";
+        for (int i = 0; i < str2.length(); i++) {
+            if (str2.charAt(i) >= '0' && str2.charAt(i) <= '9') {
+                ans += "";
+            } else {
+                ans += str2.charAt(i);
+            }
+        }
+        char[] arr = ans.toCharArray();
+        Arrays.sort(arr);
+        return String.valueOf(arr);
     }
 
     public static String vowelateven(String s) {
@@ -238,6 +253,7 @@ public class String_basic_question {
         char temp = 'b';
         String comp = "abb";
         String str1 = "G()(al)";
+        String str2 = "is2 sentence4 This1 a3";
         System.out.println(count(s, temp));
         System.out.println(reverse(s));
         System.out.println(palindrom(s));
@@ -253,5 +269,6 @@ public class String_basic_question {
         System.out.println(uppertolower(s));
         System.out.println(deffangaddress(str));
         System.out.println(goalparser(str1));
+        System.out.println(sortingthestring(str2));
     }
 }
