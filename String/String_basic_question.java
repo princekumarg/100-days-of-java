@@ -202,10 +202,42 @@ public class String_basic_question {
         return ans;
     }
 
+    public static String deffangaddress(String str) {
+        String ans = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '.') {
+                ans += "[.]";
+            } else {
+                ans += str.charAt(i);
+            }
+        }
+        return ans;
+        // return s.replace('.',"[.]");
+    }
+
+    public static String goalparser(String str1) {
+        // str1=str1.replace("()","o");
+        // str1=str1.replace("(al)","al");
+        String ans = "";
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) == 'G') {
+                ans += "G";
+            } else if (str1.charAt(i) == '(' && str1.charAt(i + 1) == ')') {
+                ans += "o";
+            } else if (str1.charAt(i) == '(' && str1.charAt(i + 1) == 'a' && str1.charAt(i + 2) == 'l'
+                    && str1.charAt(i + 3) == ')') {
+                ans += "al";
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         String s = "aaabbcccc$";
+        String str = "1.1.1.1";
         char temp = 'b';
         String comp = "abb";
+        String str1 = "G()(al)";
         System.out.println(count(s, temp));
         System.out.println(reverse(s));
         System.out.println(palindrom(s));
@@ -219,5 +251,7 @@ public class String_basic_question {
         System.out.println(maxoccchar(s));
         System.out.println(nonreptingchar(s));
         System.out.println(uppertolower(s));
+        System.out.println(deffangaddress(str));
+        System.out.println(goalparser(str1));
     }
 }
