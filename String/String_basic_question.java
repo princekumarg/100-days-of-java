@@ -111,6 +111,20 @@ public class String_basic_question {
         return false;
     }
 
+    public static int isvowels(char ch) {
+        return "aeiouAEIOU".indexOf(ch) != -1 ? 1 : 0;
+    }
+
+    public static boolean cheakhalfisalike(String s) {
+        int len = s.length() / 2;
+        int count1 = 0, count2 = 0;
+        for (int i = 0; i < len; i++) {
+            count1 += isvowels(s.charAt(i));
+            count2 += isvowels(s.charAt(i));
+        }
+        return count1 == count2;
+    }
+
     public static String reversevowel(String s) {
         char ch[] = s.toCharArray();
         int start = 0;
@@ -270,5 +284,7 @@ public class String_basic_question {
         System.out.println(deffangaddress(str));
         System.out.println(goalparser(str1));
         System.out.println(sortingthestring(str2));
+        System.out.println(cheakhalfisalike(s));
+        System.out.println(upperlower(str2));
     }
 }
