@@ -70,6 +70,18 @@ public class leetcode_Question {
         return sb.toString();
     }
 
+    public static int lengthoflastword(String s) {
+        int first = 0;
+        for (int i = s.length() - 1; i > 0; i--) {
+            if (s.charAt(i) != ' ' && s.charAt(i - 1) != ' ') {
+                first = i;
+                break;
+            }
+        }
+        String temp = s.substring(first).trim();
+        return temp.length();
+    }
+
     public static void main(String[] args) {
         String s = "helloll";// "A man a plan, a canal: Panama"; for palindrom
         String str = "ll";
@@ -78,5 +90,6 @@ public class leetcode_Question {
         System.out.println(maxsubstring(s, str));
         System.out.println(MergingString(s, str));
         System.out.println(reverseprefix(s, 'o'));
+        System.out.println(lengthoflastword(s));
     }
 }
