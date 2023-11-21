@@ -2,7 +2,7 @@ package String;
 
 public class leetcode_Question {
     public static int indexoffirstindex(String s, String str) {
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < (s.length() - str.length()); i++) {
             if (s.charAt(i) == str.charAt(0)) {
                 if (s.substring(i, str.length() + i).equals(str)) {
                     return i;
@@ -10,6 +10,16 @@ public class leetcode_Question {
             }
         }
         return -1;
+    }
+
+    public static int Noofwords(String[] arr, String s) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (s.contains(arr[i]) == true) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static boolean validpalidrom(String s) {
@@ -79,17 +89,41 @@ public class leetcode_Question {
             }
         }
         String temp = s.substring(first).trim();
-        return temp.length();
+        return temp.length();// String.trim() is reomve all the space
+    }
+
+    public static boolean stepstring(String s) {
+        int updown = 0;
+        int leftright = 0;
+        for (char c : s.toCharArray()) {
+            switch (c) {
+                case 'U':
+                    updown++;
+                    break;
+                case 'D':
+                    updown--;
+                    break;
+                case 'L':
+                    leftright++;
+                    break;
+                case 'R':
+                    leftright--;
+                    break;
+            }
+        }
+        return (updown == 0 && leftright == 0);
     }
 
     public static void main(String[] args) {
         String s = "helloll";// "A man a plan, a canal: Panama"; for palindrom
         String str = "ll";
+        String arr[] = { "ll", "he", "lo", "p" };
         System.out.println(indexoffirstindex(s, str));
         System.out.println(validpalidrom(s));
         System.out.println(maxsubstring(s, str));
         System.out.println(MergingString(s, str));
         System.out.println(reverseprefix(s, 'o'));
         System.out.println(lengthoflastword(s));
+        System.out.println(Noofwords(arr, s));
     }
 }
