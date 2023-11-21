@@ -58,6 +58,18 @@ public class leetcode_Question {
         return sb.toString();
     }
 
+    public static String reverseprefix(String s, char ch) {
+        int index = s.indexOf(ch);
+        if (index == -1) {
+            return s;
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(s.substring(0, index + 1));
+        sb.reverse();
+        sb.append(s.substring(index + 1));
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         String s = "helloll";// "A man a plan, a canal: Panama"; for palindrom
         String str = "ll";
@@ -65,5 +77,6 @@ public class leetcode_Question {
         System.out.println(validpalidrom(s));
         System.out.println(maxsubstring(s, str));
         System.out.println(MergingString(s, str));
+        System.out.println(reverseprefix(s, 'o'));
     }
 }
