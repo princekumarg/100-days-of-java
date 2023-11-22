@@ -261,6 +261,13 @@ public class String_basic_question {
         return ans;
     }
 
+    public static boolean isrotation(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        return (s1 + s1).contains(s2);
+    }
+
     public static void main(String[] args) {
         String s = "aaabbcccc$";
         String str = "1.1.1.1";
@@ -268,6 +275,7 @@ public class String_basic_question {
         String comp = "abb";
         String str1 = "G()(al)";
         String str2 = "is2 sentence4 This1 a3";
+        String s3 = "bbaaacccc$";
         System.out.println(count(s, temp));
         System.out.println(reverse(s));
         System.out.println(palindrom(s));
@@ -285,6 +293,7 @@ public class String_basic_question {
         System.out.println(goalparser(str1));
         System.out.println(sortingthestring(str2));
         System.out.println(cheakhalfisalike(s));
-        System.out.println(upperlower(str2));
+        System.out.println(upperlower(s));
+        System.out.println(isrotation(s, s3));
     }
 }
