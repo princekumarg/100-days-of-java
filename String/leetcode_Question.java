@@ -12,6 +12,15 @@ public class leetcode_Question {
         return -1;
     }
 
+    public static int strstr(String s, String str) {
+        for (int i = 0; i <= (s.length() - str.length()); i++) {
+            if (str.equals(s.substring(i, i + str.length()))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public static int Noofwords(String[] arr, String s) {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -125,5 +134,7 @@ public class leetcode_Question {
         System.out.println(reverseprefix(s, 'o'));
         System.out.println(lengthoflastword(s));
         System.out.println(Noofwords(arr, s));
+        System.out.println(stepstring(str));
+        System.out.println(strstr(s, str));
     }
 }
