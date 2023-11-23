@@ -44,6 +44,16 @@ public class power {
         return ans;
     }
 
+    public static int powerofthree(int n) {
+        while (n >= 3) {
+            if (n % 2 != 0) {
+                return 0;
+            }
+            n = n / 3;
+        }
+        return n == 1 ? 1 : 0;
+    }
+
     public static long poweress(int x, int n) {
         if (n == 0) {
             return 0;

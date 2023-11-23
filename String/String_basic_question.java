@@ -261,11 +261,25 @@ public class String_basic_question {
         return ans;
     }
 
-    public static boolean isrotation(String s1, String s2) {
+    public static boolean arerotation(String s1, String s2) {
         if (s1.length() != s2.length()) {
             return false;
         }
         return (s1 + s1).contains(s2);
+    }
+
+    public static boolean isrotationbyplace(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        int n = s1.length();
+        String temp = s1 + s1;
+        for (int i = 0; i < n; i++) {
+            if (temp.indexOf(s2) == 2 || temp.indexOf(s2) == n - 2) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -294,6 +308,7 @@ public class String_basic_question {
         System.out.println(sortingthestring(str2));
         System.out.println(cheakhalfisalike(s));
         System.out.println(upperlower(s));
-        System.out.println(isrotation(s, s3));
+        System.out.println(arerotation(s, s3));
+        System.out.println(isrotationbyplace(s, s3));
     }
 }

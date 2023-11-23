@@ -1,0 +1,8 @@
+S.contains(s2);
+S.repeate();
+S.trim();
+S.replace();
+S.toLowerCase();
+Integer.toBinaryString()
+Integer.ParsInt();
+S.indexOf();//finding the index
