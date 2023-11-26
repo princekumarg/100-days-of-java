@@ -18,7 +18,7 @@ public class no_of_zeros_in_factorial {
 
     public static int Traling_zeros(int a) {
         int count = 0;
-        for (int i = 5; i <= a; i = i * 5) {
+        for (int i = 5; i <= a; i = i * 5) {// multiple of 5;
             count = count + a / i;
         }
         return count;
