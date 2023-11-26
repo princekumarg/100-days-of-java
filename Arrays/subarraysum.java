@@ -20,6 +20,26 @@ public class subarraysum {
         return res;
     }
 
+    public static ArrayList<Integer> subsum(int arr[], int n, int k) {
+        int sum = 0;
+        ArrayList<Integer> res = new ArrayList<>();
+        int start = 0, end = 0;
+        for (end = 0; end < n; end++) {
+            sum = sum + arr[end];
+            while (sum > k) {
+                sum = sum - arr[start];
+                start++;
+            }
+            if (sum == k && start <= end) {
+                res.add(start);
+                res.add(end);
+            }
+        }
+        res.add(-1);
+        return res;
+
+    }
+
     public static int sumsubarrayindex(int[] arr, int n, int k) {
         int sum = 0;
         int res = 0;
