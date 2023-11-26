@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Even_odd_A {
+public class Swappblevalues {
 
     public static int countpair(int arr[]) {
         int cnt = 0;

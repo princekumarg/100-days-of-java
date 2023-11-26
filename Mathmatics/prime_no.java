@@ -21,8 +21,16 @@ public class prime_no {
         return true;
     }
 
-    public static void primefactorization(int k) {
-
+    public static String countFactore(int n) {
+        if ((n & 1) == 1) {
+            return "odd";
+        } else {
+            if (n % 4 == 0) {
+                return "even";
+            } else {
+                return "same";
+            }
+        }
     }
 
     public static void main(String args[]) {
@@ -30,5 +38,6 @@ public class prime_no {
         System.out.println("Enter the number");
         int n = s.nextInt();
         System.out.println(isPrime(n));
+        System.out.println(countFactore(n));
     }
 }
