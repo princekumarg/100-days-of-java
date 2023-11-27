@@ -1,8 +1,5 @@
 package String;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class subarraystring {
     public static char[] maxconsequtive(String s) {
         if (s == null || s.length() == 0) {
