@@ -15,6 +15,30 @@ public class conqutive {
         return res;
     }
 
+    public static int[] consecutiveArray(int arr[], int n, int temp) {
+        int count = 1;
+        int index = -1; // Initialize index to -1 to indicate no consecutive sequence found
+
+        for (int i = 0; i < n - 1; i++) {
+            if (arr[i] == temp && arr[i + 1] == temp) {
+                if (index == -1) {
+                    index = i; // Set the starting index only if it's the beginning of the consecutive sequence
+                }
+                count++;
+            } else {
+                index = -1; // Reset the starting index if the consecutive sequence is broken
+                count = 1;
+            }
+        }
+
+        if (index != -1) {
+            int end = index + count - 1;
+            return new int[] { index, end };
+        } else {
+            return new int[] { -1, -1 }; // Return {-1, -1} if no consecutive sequence is found
+        }
+    }
+
     public static int conseqtiveeven(int arr[], int n) {
         int count = 0, res = 0;
         for (int i = 0; i < n; i++) {
@@ -78,5 +102,8 @@ public class conqutive {
         System.out.println(conseqtiveeven(arr, n));
         System.out.println(evencount(arr, n));
         System.out.println(pallindromarray(arr));
+        int temp = 10;
+        int res[] = consecutiveArray(arr, n, temp);
+        System.out.println(res[0] + " " + res[1]);
     }
 }
