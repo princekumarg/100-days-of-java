@@ -1,7 +1,10 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class leetcode {
     public static int[] permutationarray(int arr[]) {
@@ -97,6 +100,19 @@ public class leetcode {
             }
         }
         return count % 2 == 0;
+    }
+
+    public static int[] countarray(int arr[]) {
+        Map<Integer, Integer> m = new HashMap<>();
+        int copy[] = arr.clone();
+        Arrays.sort(copy);
+        for (int i = 0; i < arr.length; i++) {
+            m.putIfAbsent(copy[i], i);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            copy[i] = m.get(arr[i]);
+        }
+        return copy;
     }
 
     public static void main(String[] args) {

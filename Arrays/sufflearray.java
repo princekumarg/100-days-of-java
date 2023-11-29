@@ -23,6 +23,18 @@ public class sufflearray {
         return res;
     }
 
+    public static int[] countless(int arr[]) {
+        int count[] = new int[101];
+        int res[] = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < arr[i + 1]) {
+                count[arr[i]]++;
+            }
+            res[i] = count[arr[i]];
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 2, 5, 1, 3, 4, 7 };
         int n = arr.length / 2;
