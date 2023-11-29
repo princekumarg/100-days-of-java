@@ -1,5 +1,8 @@
 package String;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class panagram {
     public static boolean checkIfpangram(String s) {
         int n = s.length();

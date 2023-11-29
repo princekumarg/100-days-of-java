@@ -115,6 +115,72 @@ public class leetcode {
         return copy;
     }
 
+    public static int[] shufflearray(int arr[], int n) {
+        /*
+         * int res[] = new int[2 * n];
+         * for (int i = 0; i < n; i++) {
+         * res[2 * i] = arr[i];
+         * res[2 * i + 1] = arr[i + n];
+         * }
+         * return res;
+         */
+        for (int i = n; i < 2 * n; i++) {
+            arr[i] = arr[i] << 10;
+            arr[i] |= arr[i - n];
+        }
+        int z = n;
+        for (int i = 0; i < 2 * n; i++) {
+            arr[i] = arr[z] & 1023;
+            arr[i] = arr[z++] >> 10;
+        }
+        return arr;
+    }
+
+    public static int[] sumzeros(int n) {
+        int res[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            res[i] = 2 * i - n + 1;
+        }
+        return res;
+    }
+
+    public static int[] pulseone(int arr[]) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] < 9) {
+                arr[i]++;
+                return arr;
+            }
+            arr[i] = 0;
+        }
+        int res[] = new int[arr.length + 1];
+        res[0] = 1;
+        return res;
+
+    }
+
+    public static int findmax(int arr[]) {
+        int even = 0;
+        for (int i : arr) {
+            if (i % 2 == 0) {
+                even++;
+            }
+        }
+        return Math.min(even, arr.length - even);
+    }
+
+    public static int findmaxalitude(int arr[]) {
+        int max = 0;
+        int prefix[] = new int[arr.length + 1];
+        prefix[0] = 0;
+        for (int i = 0; i < arr.length; i++) {
+            prefix[i + 1] = prefix[i] + arr[i];
+        }
+        for (int i = 0; i < prefix.length; i++) {
+            max = Math.max(max, prefix[i]);
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 0, 2, 1, 5, 3, 4 };
         int res[] = permutationarray(arr);
