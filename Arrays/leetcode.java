@@ -43,18 +43,6 @@ public class leetcode {
         return res;
     }
 
-    public static List<Boolean> findless(int arr[], int k) {
-        int max = 0;
-        List<Boolean> ans = new ArrayList<>();
-        for (int x : arr) {
-            max = Math.max(x, max);
-        }
-        for (int x : arr) {
-            ans.add(k + x >= max);
-        }
-        return ans;
-    }
-
     public static int findpair(int arr[]) {
         int res = 0;
         int cnt[] = new int[101];
@@ -100,6 +88,18 @@ public class leetcode {
             }
         }
         return count % 2 == 0;
+    }
+
+    public static List<Boolean> findless(int arr[], int k) {
+        int max = 0;
+        List<Boolean> ans = new ArrayList<>();
+        for (int x : arr) {
+            max = Math.max(max, x);
+        }
+        for (int x : arr) {
+            ans.add(x + k >= max);
+        }
+        return ans;
     }
 
     public static int[] countarray(int arr[]) {
