@@ -41,6 +41,19 @@ public class basicquestion {
         return 0;
     }
 
+    public static Node middleelmArray(Node head) {
+        if (head == null) {
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     public static int binaryNode(Node head) {
         int ans = 0;
         Node temp = head;
@@ -61,6 +74,18 @@ public class basicquestion {
             temp = temp.next;
         }
         return new int[] { sum, pro };
+    }
+
+    public static Node reverse(Node head) {
+        Node curr = head;
+        Node prev = null;
+        while (curr != null) {
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
     }
 
     public static void printaltrnative(Node head) {
