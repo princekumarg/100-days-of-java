@@ -41,6 +41,39 @@ public class basicquestion {
         return 0;
     }
 
+    public static int binaryNode(Node head) {
+        int ans = 0;
+        Node temp = head;
+        while (temp != null) {
+            ans = ans * 2 + temp.data;
+            temp = temp.next;
+        }
+        return ans;
+    }
+
+    public static int[] sumpro(Node head) {
+        int sum = 0;
+        int pro = 1;
+        Node temp = head;
+        while (temp != null) {
+            sum = sum + temp.data;
+            pro = pro * temp.data;
+            temp = temp.next;
+        }
+        return new int[] { sum, pro };
+    }
+
+    public static void printaltrnative(Node head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            temp.next = temp.next.next;
+            temp = temp.next;
+        }
+    }
+
     public static boolean searchrec(Node head, int temp) {
         if (head == null) {
             return false;
@@ -62,13 +95,24 @@ public class basicquestion {
         return false;
     }
 
+    public static int findelem(Node head, int index) {
+        Node temp = head;
+        int count = 0;// if index starts from 0 else count=1 for index start from 1
+        while (temp != null) {
+            if (count == index) {
+                return temp.data;
+            }
+            count++;
+            temp = temp.next;
+        }
+        return -1;
+    }
+
     public static boolean identicalLL(Node head1, Node head2) {
         Node temp1 = head1;
         Node temp2 = head2;
         while (temp1 != null && temp2 != null) {
             if (temp1.data != temp2.data) {
-                return false;
-            } else if (temp1.data != temp2.data) {
                 return false;
             }
             temp1 = temp1.next;
