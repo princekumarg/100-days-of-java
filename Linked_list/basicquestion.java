@@ -41,6 +41,42 @@ public class basicquestion {
         return 0;
     }
 
+    public static boolean searchrec(Node head, int temp) {
+        if (head == null) {
+            return false;
+        }
+        if (head.data == temp) {
+            return true;
+        }
+        return searchrec(head.next, temp);
+    }
+
+    public static boolean serachitr(Node head, int x) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == x) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    public static boolean identicalLL(Node head1, Node head2) {
+        Node temp1 = head1;
+        Node temp2 = head2;
+        while (temp1 != null && temp2 != null) {
+            if (temp1.data != temp2.data) {
+                return false;
+            } else if (temp1.data != temp2.data) {
+                return false;
+            }
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+        }
+        return true;
+    }
+
     public static Node insertbegin(Node head, int x) {
         Node newnode = new Node(x);
         if (head == null) {
