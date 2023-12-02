@@ -123,6 +123,16 @@ public class leetcode_Question {
         return (updown == 0 && leftright == 0);
     }
 
+    public static String reverseword(String s) {
+        // Trim the input string to remove leading and trailing spaces
+        String arr[] = s.trim().split("\\s+");
+        String out = "";
+        for (int i = arr.length - 1; i > 0; i--) {
+            out += arr[i] + " ";
+        }
+        return out + arr[0];
+    }
+
     public static void main(String[] args) {
         String s = "helloll";// "A man a plan, a canal: Panama"; for palindrom
         String str = "ll";

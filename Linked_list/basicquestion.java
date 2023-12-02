@@ -30,7 +30,7 @@ public class basicquestion {
             return 0;
         }
         Node slow = head;
-        Node fast = head.next.next;
+        Node fast = head;
         while (fast != null && fast.next != null) {
             if (slow == fast) {
                 return 1;
@@ -39,6 +39,25 @@ public class basicquestion {
             fast = fast.next.next;
         }
         return 0;
+    }
+
+    public static Node circularNode(Node head) {
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                break;
+            }
+        }
+        if (fast == null && fast.next == null) {
+            return null;
+        }
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return head;
     }
 
     public static Node middleelmArray(Node head) {
@@ -206,6 +225,19 @@ public class basicquestion {
             }
         }
         return temp;
+    }
+
+    public static Node intersection(Node head1, Node head2) {
+        if (head1 == null || head2 == null) {
+            return null;
+        }
+        Node temp1 = head1;
+        Node temp2 = head2;
+        while (temp1 != temp2) {
+            temp1 = temp1 == null ? head2 : temp1.next;
+            temp2 = temp2 == null ? head1 : temp2.next;
+        }
+        return temp1;
     }
 
     public static boolean identicalLL(Node head1, Node head2) {
