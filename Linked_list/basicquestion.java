@@ -152,6 +152,62 @@ public class basicquestion {
         return -1;
     }
 
+    public static Node MergesortList(Node list1, Node list2) {
+        if (list1 == null) {
+            return list2;
+        }
+        if (list2 == null) {
+            return list1;
+        }
+        Node temp;
+        if (list1.data < list2.data) {
+            temp = new Node(list1.data);
+            temp.next = MergesortList(list1.next, list2);
+        } else {
+            temp = new Node(list2.data);
+            temp.next = MergesortList(list1, list2.next);
+        }
+        return temp;
+    }
+
+    public static Node removeduplicate(Node head) {
+        Node curr = head;
+        while (curr != null && curr.next != null) {
+            if (curr.data == curr.next.data) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+    public static Node unionlist(Node head1, Node head2) {
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        Node temp;
+        if (head1.data < head2.data) {
+            temp = new Node(head1.data);
+            temp.next = unionlist(head1.next, head2);
+        } else {
+            temp = new Node(head2.data);
+            temp.next = unionlist(head1, head2.next);
+        }
+        Node curr = temp;
+        while (curr != null && curr.next != null) {
+            if (curr.data == curr.next.data) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+        return temp;
+    }
+
     public static boolean identicalLL(Node head1, Node head2) {
         Node temp1 = head1;
         Node temp2 = head2;

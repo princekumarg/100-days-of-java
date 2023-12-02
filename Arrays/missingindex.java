@@ -1,5 +1,9 @@
 package Arrays;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public class missingindex {
     public static int missindex(int arr[], int n) {
         int total = 0;
@@ -20,6 +24,20 @@ public class missingindex {
             x2 = x2 ^ i;
         }
         return x1 ^ x2;
+    }
+
+    public static ArrayList<Integer> missingvalue(int arr[]) {
+        Set<Integer> hs = new HashSet<>();
+        for (int x : arr) {
+            hs.add(x);
+        }
+        ArrayList<Integer> ls = new ArrayList<>();
+        for (int i = 1; i <= arr.length; i++) {
+            if (!hs.contains(i)) {
+                ls.add(i);
+            }
+        }
+        return ls;
     }
 
     public static void main(String[] args) {
