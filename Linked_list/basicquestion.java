@@ -79,13 +79,32 @@ public class basicquestion {
     public static Node reverse(Node head) {
         Node curr = head;
         Node prev = null;
+        Node next = null;
         while (curr != null) {
-            Node next = curr.next;
+            next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
         }
         return prev;
+    }
+
+    public static boolean ispalindrom(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node rev = reverse(slow);
+        while (rev != null && head != null) {
+            if (rev.data != head.data) {
+                return false;
+            }
+            rev = rev.next;
+            head = head.next;
+        }
+        return true;
     }
 
     public static void printaltrnative(Node head) {
@@ -174,6 +193,11 @@ public class basicquestion {
             System.out.print(head.data + "->");
             head = head.next;
         }
+    }
+
+    public static void DetectNode(Node head) {
+        head.data = head.next.data;
+        head.next = head.next.next;
     }
 
     public static void main(String[] args) {
