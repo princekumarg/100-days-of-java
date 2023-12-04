@@ -133,6 +133,47 @@ public class leetcode_Question {
         return out + arr[0];
     }
 
+    public static void countfrequecyeachelm(String s) {
+
+    }
+
+    public static int maxdepth(String s) {
+        int ans = 0;
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                count++;
+            } else if (s.charAt(i) == ')') {
+                count--;
+            }
+            ans = Math.max(ans, count);
+        }
+        return ans;
+    }
+
+    public static int countsubstrings(String s, int k) {
+        int n = s.length();
+        int count = 0;
+        int charcount[] = new int[26];
+        int left = 0, right = 0, distinctcount = 0;
+        while (right < n) {
+            if (charcount[s.charAt(right) - 'a'] == 0) {
+                distinctcount++;
+            }
+            charcount[s.charAt(right) - 'a']++;
+            while (distinctcount > k) {
+                charcount[s.charAt(left) - 'a']--;
+                if (charcount[s.charAt(left) - 'a'] == 0) {
+                    distinctcount--;
+                }
+                left++;
+            }
+            count += right - left + 1;
+            right++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         String s = "helloll";// "A man a plan, a canal: Panama"; for palindrom
         String str = "ll";
