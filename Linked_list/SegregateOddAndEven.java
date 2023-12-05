@@ -2,33 +2,26 @@ package Linked_list;
 
 public class SegregateOddAndEven {
     public static Node segregate(Node head) {
-        Node es = null, ee = null, os = null, oe = null;
-        for (Node curr = head; curr != null; curr = curr.next) {
-            int x = curr.data;
-            if (x % 2 == 0) {
-                if (es == null) {
-                    es = curr;
-                    ee = es;
-                } else {
-                    ee.next = curr;
-                    ee = ee.next;
-                }
+        Node dummy_odd = new Node(-1);
+        Node dummy_even = new Node(-1);
+        Node odd = dummy_odd;
+        Node even = dummy_even;
+        int index = 0;
+        Node curr = head;
+        while (curr != null) {
+            index++;
+            if (index % 2 == 0) {
+                even.next = curr;
+                even = even.next;
             } else {
-                if (os == null) {
-                    os = curr;
-                    oe = os;
-                } else {
-                    oe.next = curr;
-                    oe = ee.next;
-                }
+                odd.next = curr;
+                odd = odd.next;
             }
+            curr = curr.next;
         }
-        if (os == null || es == null) {
-            return head;
-        }
-        ee.next = os;
-        oe.next = null;
-        return es;
+        even.next = null;
+        odd.next = dummy_even.next;
+        return dummy_odd.next;
     }
 
     public static void main(String[] args) {
