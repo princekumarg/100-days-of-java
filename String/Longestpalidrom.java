@@ -31,6 +31,32 @@ public class Longestpalidrom {
         return ans;
     }
 
+    public static String subend(String s, int start, int end) {
+        while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
+        }
+        return s.substring(start + 1, end);
+    }
+
+    public static String longestpalinfrm(String s) {
+        if (s.length() <= 1) {
+            return s;
+        }
+        String maxstr = s.substring(0, 1);
+        for (int i = 0; i < s.length() - 1; i++) {
+            String odd = subend(s, i, i);
+            String even = subend(s, i, i + 1);
+            if (odd.length() > maxstr.length()) {
+                maxstr = odd;
+            }
+            if (even.length() > maxstr.length()) {
+                maxstr = even;
+            }
+        }
+        return maxstr;
+    }
+
     public static void main(String[] args) {
         String s = "aaaabbaa";
         System.out.println(longestpal(s));

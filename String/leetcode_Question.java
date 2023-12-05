@@ -1,5 +1,7 @@
 package String;
 
+import java.util.Arrays;
+
 public class leetcode_Question {
     public static int indexoffirstindex(String s, String str) {
         for (int i = 0; i < (s.length() - str.length()); i++) {
@@ -149,6 +151,27 @@ public class leetcode_Question {
             ans = Math.max(ans, count);
         }
         return ans;
+    }
+
+    public static int countkdist(String s, int k) {
+        int res = 0;
+        int n = s.length();
+        int cnt[] = new int[26];
+        for (int i = 0; i < n; i++) {
+            int dist_count = 0;
+            Arrays.fill(cnt, 0);
+            for (int j = i; j < n; j++) {
+                if (cnt[s.charAt(j) - 'a'] == 0) {
+                    dist_count++;
+                }
+                cnt[s.charAt(j) - 'a']++;
+                if (dist_count == k) {
+                    res++;
+                }
+            }
+
+        }
+        return res;
     }
 
     public static int countsubstrings(String s, int k) {

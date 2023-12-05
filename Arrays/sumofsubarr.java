@@ -1,5 +1,6 @@
 package Arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +57,24 @@ public class sumofsubarr {
             }
         }
         return maxi;
+    }
+
+    public static int maxFrequency(int arr[], int k) {
+        long max = 0;
+        long sum = 0;
+        int left = 0;
+        int right = 0;
+        Arrays.sort(arr);
+        while (right < arr.length) {
+            sum += arr[right];
+            while (sum + k < (long) arr[right] * (right - left + 1)) {
+                sum -= arr[left];
+                left++;
+            }
+            max = Math.max(max, right - left + 1);
+            right++;
+        }
+        return (int) max;
     }
 
     public static void main(String[] args) {
