@@ -73,6 +73,61 @@ public class basicquestion {
         return slow;
     }
 
+    public static Node deleteMiddle(Node head) {
+        if (head.next == null) {
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        Node temp = head;
+        while (fast != null && fast.next != null) {
+            temp = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        temp.next = slow.next;
+        return head;
+    }
+
+    public static Node deleteNthNode(Node head, int n) {
+        Node first = new Node(0);
+        first.next = head;
+        Node slow = first;
+        Node fast = first;
+        for (int i = 1; i <= n; i++) {
+            fast = fast.next;
+        }
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        slow.next = slow.next.next;
+        return first.next;
+    }
+
+    public static int findlength(Node slow, Node fast) {
+        int count = 0;
+        fast = fast.next;
+        while (slow != fast) {
+            count++;
+            fast = fast.next;
+        }
+        return count;
+    }
+
+    public static int looplength(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return findlength(slow, fast);
+            }
+        }
+        return 0;
+    }
+
     public static int binaryNode(Node head) {
         int ans = 0;
         Node temp = head;
@@ -283,32 +338,24 @@ public class basicquestion {
         }
     }
 
-    public static void DetectNode(Node head) {
+    public static void DeltetNode(Node head) {
         head.data = head.next.data;
         head.next = head.next.next;
     }
 
-    public static int findlength(Node slow, Node fast) {
-        int count = 0;
-        fast = fast.next;
-        while (slow != fast) {
-            count++;
-            fast = fast.next;
-        }
-        return count;
-    }
-
-    public static int looplength(Node head) {
-        Node slow = head;
-        Node fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (slow == fast) {
-                return findlength(slow, fast);
+    public static Node sortingLL(Node head) {
+        Node curr = head;
+        Node prev = head;
+        while (curr != null) {
+            prev = curr;
+            curr = curr.next;
+            if (prev.data > curr.data) {
+                int temp = prev.data;
+                prev.data = curr.data;
+                curr.data = temp;
             }
         }
-        return 0;
+        return head;
     }
 
     public static void main(String[] args) {
