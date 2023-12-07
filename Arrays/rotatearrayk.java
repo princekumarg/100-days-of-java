@@ -1,6 +1,15 @@
 package Arrays;
 
 public class rotatearrayk {
+    public static void reverse1(int arr[], int n) {
+        int temp;
+        for (int i = 0; i < n / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[n - i - 1];
+            arr[n - i - 1] = temp;
+        }
+    }
+
     public static void rotatedarray1(int arr[], int d) {
         for (int i = 0; i < d; i++) {
             int first = arr[0];

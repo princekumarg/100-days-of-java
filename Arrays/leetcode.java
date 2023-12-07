@@ -181,6 +181,15 @@ public class leetcode {
         return max;
     }
 
+    public static int[] decodedArrays(int arr[], int n, int first) {
+        int tem[] = new int[n + 1];
+        tem[0] = first;
+        for (int i = 0; i < n; i++) {
+            tem[i + 1] = tem[i] ^ arr[i];
+        }
+        return tem;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 0, 2, 1, 5, 3, 4 };
         int res[] = permutationarray(arr);
