@@ -1,6 +1,35 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class FirstMissingPostive {
+    public static int firstpostive(int arr[]) {
+        Arrays.sort(arr);
+        int ans = 1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == ans) {
+                ans++;
+            }
+        }
+        return ans;
+    }
+
+    public static int firstpostive2(int arr[]) {
+        int n = arr.length;
+        int ans[] = new int[n + 1];
+        for (int nums : arr) {
+            if (nums > 0 && nums <= n) {
+                ans[nums] = 1;
+            }
+        }
+        for (int i = 1; i <= n; i++) {
+            if (ans[i] == 0) {
+                return i;
+            }
+        }
+        return n + 1;
+    }
+
     public static int segregate(int[] arr) {
         int i = 0;
         for (int j = 0; j < arr.length; j++) {
