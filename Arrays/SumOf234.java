@@ -3,6 +3,22 @@ package Arrays;
 import java.util.*;
 
 public class SumOf234 {
+    public static int[] TwoSum(int arr[], int target) {
+        int n = arr.length;
+        int ans[] = new int[2];
+        Map<Integer, Integer> mp = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            int rem = target - arr[i];
+            if (mp.containsKey(rem)) {
+                ans[0] = mp.get(rem);
+                ans[1] = i;
+                return ans;
+            }
+            mp.put(arr[i], i);
+        }
+        return ans;
+    }
+
     public static List<List<Integer>> ThreeSum(int arr[]) {
         Set<List<Integer>> sl = new HashSet<>();
         int n = arr.length;

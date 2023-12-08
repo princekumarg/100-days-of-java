@@ -181,6 +181,35 @@ public class basicquestion {
         return true;
     }
 
+    public static Node pluseone(Node head) {
+        while (head != null && head.data == 0) {
+            head = head.next;
+        }
+        head = reverse(head);
+        Node temp = head;
+        int carry = 1;
+        Node prev = head;
+        while (temp != null) {
+            int sum = temp.data + carry;
+            carry = sum / 10;
+            sum = sum % 10;
+            head.data = sum;
+            prev = head;
+            head = head.next;
+        }
+        if (carry != 0) {
+            Node newNode = new Node(carry);
+            newNode.data = carry;
+            if (prev != null) {
+                prev.next = newNode;
+            } else {
+                return newNode;
+            }
+        }
+        Node ans = reverse(temp);
+        return ans;
+    }
+
     public static void printaltrnative(Node head) {
         if (head == null || head.next == null) {
             return;
