@@ -11,8 +11,14 @@ public class QuestiononOperation {
         return count;
     }
 
-    public static int removeeven(int arr[]){
-        int 
+    public static int removeeven(int arr[]) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != (arr[i] & 1)) {
+                arr[count++] = arr[i];
+            }
+        }
+        return count;
     }
 
     public static int[] countless(int arr[], int n) {

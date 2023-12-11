@@ -30,6 +30,7 @@ public class subarraysum {
                 sum = sum - arr[start];
                 start++;
             }
+
             if (sum == k && start <= end) {
                 res.add(start);
                 res.add(end);

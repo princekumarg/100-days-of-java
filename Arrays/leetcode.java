@@ -190,6 +190,20 @@ public class leetcode {
         return tem;
     }
 
+    public static int maxfreq(int arr[]) {
+        int max = 0;
+        int el = 0;
+        Map<Integer, Integer> m = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            m.put(arr[i], m.getOrDefault(arr[i], 0) + 1);
+            if (m.get(arr[i]) > max) {
+                max = m.get(arr[i]);
+                el = arr[i];
+            }
+        }
+        return el;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 0, 2, 1, 5, 3, 4 };
         int res[] = permutationarray(arr);

@@ -60,6 +60,18 @@ public class basicquestion {
         return head;
     }
 
+    public static Node getNode(Node head, int k) {
+        for (int i = 1; i < k && head != null; i++) {
+            head = head.next;
+        }
+        return head;
+    }
+
+    public static Node newNode(int data) {
+        Node newnode = new Node(data);
+        return newnode;
+    }
+
     public static Node middleelmArray(Node head) {
         if (head == null) {
             return null;
