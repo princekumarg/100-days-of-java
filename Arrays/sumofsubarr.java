@@ -19,7 +19,7 @@ public class sumofsubarr {
         return res;
     }
 
-    public static int sumofsubarr1(int arr[], int n, int k) {
+    public static int sumofsubarr1(int arr[], int n, int k) {// postive
         long sum = 0;
         int maxlen = 0;
         Map<Long, Integer> mp = new HashMap<>();
