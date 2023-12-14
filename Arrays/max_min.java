@@ -1,6 +1,8 @@
 package Arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class max_min {
     public static int maximum(int arr[], int n) {
@@ -122,6 +124,39 @@ public class max_min {
             }
         }
         return element;
+    }
+
+    public static int maxoccarr(int arr[], int n) {
+        int max = 0;
+        /*
+         * Map<Integer, Integer> hm = new HashMap<>();
+         * for (int i = 0; i < n; i++) {
+         * if (hm.containsKey(arr[i])) {
+         * hm.put(arr[i], hm.getOrDefault(arr[i], 0) + 1);
+         * } else {
+         * hm.put(arr[i], 1);
+         * }
+         * }
+         * for (Map.Entry<Integer, Integer> en : hm.entrySet()) {
+         * if (en.getValue() > max) {
+         * max = en.getValue();
+         * }
+         * }
+         */
+        int count[] = new int[1000];
+        int elem = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == arr[i + 1]) {
+                count[arr[i]]++;
+            }
+        }
+        for (int i = 0; i < 1000; i++) {
+            if (count[i] > max) {
+                max = count[i];
+                elem = arr[i];
+            }
+        }
+        return elem;
     }
 
     public static int maxdiff(int arr[], int n) {

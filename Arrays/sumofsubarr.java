@@ -40,6 +40,22 @@ public class sumofsubarr {
         return maxlen;
     }
 
+    public static int sumkis(int arr[], int k) {
+        int n = arr.length;
+        int sum = 0;
+        int res = 0;
+        Map<Integer, Integer> m = new HashMap<>();
+        m.put(0, 1);
+        for (int i = 0; i < n; i++) {
+            sum = sum + arr[i];
+            if (m.containsKey(sum - k)) {
+                res += m.get(sum - k);
+            }
+            m.put(sum, m.getOrDefault(sum, 0) + 1);
+        }
+        return res;
+    }
+
     public static int sumzero(int arr[], int n) {
         int sum = 0, maxi = 0;
         Map<Integer, Integer> mp = new HashMap<Integer, Integer>();
