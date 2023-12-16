@@ -19,6 +19,19 @@ public class SumOf234 {
         return ans;
     }
 
+    public static int[] sum2(int arr[], int temp) {
+        int n = arr.length;
+        Set<Integer> sl = new HashSet<>();
+        for (int i = 0; i < n; i++) {
+            int rem = temp - arr[i];
+            if (sl.contains(rem)) {
+                return new int[] { rem, arr[i] };
+            }
+            sl.add(arr[i]);
+        }
+        return new int[] {};
+    }
+
     public static List<List<Integer>> ThreeSum(int arr[]) {
         Set<List<Integer>> sl = new HashSet<>();
         int n = arr.length;
