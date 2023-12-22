@@ -12,8 +12,8 @@ public class MaxStock {
     }
 
     public static int maxProfit(int arr[]) {
-        int min = 0;
-        int diff = arr[0];
+        int diff = 0;
+        int min = arr[0];
         for (int i = 1; i < arr.length; i++) {
             int maxprofit = arr[i] - min;
             if (maxprofit > diff) {

@@ -19,17 +19,21 @@ public class SumOf234 {
         return ans;
     }
 
-    public static int[] sum2(int arr[], int temp) {
-        int n = arr.length;
-        Set<Integer> sl = new HashSet<>();
-        for (int i = 0; i < n; i++) {
-            int rem = temp - arr[i];
-            if (sl.contains(rem)) {
-                return new int[] { rem, arr[i] };
+    public static int[] sumtwo(int arr[], int temp) {
+        int ans[] = new int[2];
+        int start = 1;
+        int end = arr.length;
+        while (start < end) {
+            for (int i = 0; i + start < end; i++) {
+                if (arr[i] + arr[i + start] == temp) {
+                    ans[0] = i;
+                    ans[1] = i + start;
+                    return ans;
+                }
             }
-            sl.add(arr[i]);
+            start++;
         }
-        return new int[] {};
+        return ans;
     }
 
     public static List<List<Integer>> ThreeSum(int arr[]) {

@@ -1,4 +1,4 @@
-package Arrays;
+package SortingAlgo;
 
 import java.util.ArrayList;
 

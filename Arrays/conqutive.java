@@ -15,28 +15,45 @@ public class conqutive {
         return res;
     }
 
-    public static int[] consecutiveArray(int arr[], int n, int temp) {
+    public static int maxconsetiveelm(int arr[]) {
+        int max = 0;
         int count = 1;
-        int index = -1; // Initialize index to -1 to indicate no consecutive sequence found
-
-        for (int i = 0; i < n - 1; i++) {
-            if (arr[i] == temp && arr[i + 1] == temp) {
-                if (index == -1) {
-                    index = i; // Set the starting index only if it's the beginning of the consecutive sequence
-                }
+        int el = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == arr[i - 1]) {
                 count++;
             } else {
-                index = -1; // Reset the starting index if the consecutive sequence is broken
                 count = 1;
             }
+            if (max > count) {
+                max = count;
+                el = arr[i];
+            }
         }
+        return el;
+    }
 
-        if (index != -1) {
-            int end = index + count - 1;
-            return new int[] { index, end };
-        } else {
-            return new int[] { -1, -1 }; // Return {-1, -1} if no consecutive sequence is found
+    public static int[] maxindexelm(int arr[]) {
+        int max = 0;
+        int count = 1;
+        int lastindex = -1;
+        int firstindex = -1;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == arr[i - 1]) {
+                count++;
+            } else {
+                count = 1;
+            }
+            if (max < count) {
+                max = count;
+                lastindex = i;
+                firstindex = lastindex - max + 1;
+            }
         }
+        int res[] = new int[2];
+        res[0] = firstindex;
+        res[1] = lastindex;
+        return res;
     }
 
     public static int conseqtiveeven(int arr[], int n) {
