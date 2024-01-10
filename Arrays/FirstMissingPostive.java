@@ -45,25 +45,21 @@ public class FirstMissingPostive {
 
     public static int findMissing(int[] arr) {
         int shift = segregate(arr);
-        int[] arr2 = new int[arr.length - shift];
-        int j = 0;
-        for (int i = shift; i < arr.length; i++) {
-            arr2[j] = arr[i];
-            j++;
-        }
-        return findMissingPostive(arr2, j);
+        int[] arr2 = Arrays.copyOfRange(arr, shift, arr.length);
+        return findMissingPostive(arr2);
     }
 
-    public static int findMissingPostive(int[] arr, int size) {
-        int i;
-        for (i = 0; i < size; i++) {
-            int x = Math.abs(arr[i]);
-            if (x - 1 < size && arr[x - 1] > 0) {
-                arr[x - 1] = -arr[x - 1];
+    public static int findMissingPostive(int[] arr) {
+        int size = arr.length;
+        for (int i = 0; i < size; i++) {
+            while (arr[i] > 0 && arr[i] <= size && arr[arr[i] - 1] != arr[i]) {
+                int temp = arr[i];
+                arr[i] = arr[temp - 1];
+                arr[temp - 1] = temp;
             }
         }
-        for (i = 0; i < size; i++) {
-            if (arr[i] > 0) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] != i + 1) {
                 return i + 1;
             }
         }
@@ -72,6 +68,8 @@ public class FirstMissingPostive {
 
     public static void main(String[] args) {
         int arr[] = { 0, 10, 2, -10, -20 };
+        System.out.println(firstpostive(arr));
         System.out.println(findMissing(arr));
+        System.out.println(firstpostive2(arr));
     }
 }

@@ -65,7 +65,7 @@ public class sqrt {
         int start = 1, end = m;
         while (start <= end) {
             int mid = (start + end) / 2;
-            int res = solve(mid, end, mid);
+            int res = solve(mid, n, m);
             if (res == 1) {
                 return mid;
             }

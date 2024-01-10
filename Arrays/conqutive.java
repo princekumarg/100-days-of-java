@@ -25,7 +25,7 @@ public class conqutive {
             } else {
                 count = 1;
             }
-            if (max > count) {
+            if (max < count) {
                 max = count;
                 el = arr[i];
             }
@@ -47,7 +47,7 @@ public class conqutive {
             if (max < count) {
                 max = count;
                 lastindex = i;
-                firstindex = lastindex - max + 1;
+                firstindex = i - max + 1;
             }
         }
         int res[] = new int[2];
@@ -120,7 +120,7 @@ public class conqutive {
         System.out.println(evencount(arr, n));
         System.out.println(pallindromarray(arr));
         int temp = 10;
-        int res[] = consecutiveArray(arr, n, temp);
+        int res[] = maxindexelm(arr);
         System.out.println(res[0] + " " + res[1]);
     }
 }
