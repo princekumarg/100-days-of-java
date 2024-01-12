@@ -32,14 +32,14 @@ public class FirstMissingPostive {
 
     public static int missing(int arr[], int size) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 0) {
+            if (arr[i] <= 0) {
                 arr[i] = arr.length + 1;
             }
         }
         for (int i = 0; i < arr.length; i++) {
             int x = Math.abs(arr[i]);
             if (x <= arr.length && arr[x - 1] > 0) {
-                arr[x - 1] = arr[x - 1];
+                arr[x - 1] = -arr[x - 1];
             }
         }
         for (int i = 0; i < arr.length; i++) {
