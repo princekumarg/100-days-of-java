@@ -45,13 +45,13 @@ public class sumofsubarr {
         int sum = 0;
         int res = 0;
         Map<Integer, Integer> m = new HashMap<>();
-        m.put(0, 1);
+        m.put(0, 1);// m.put(0,1)
         for (int i = 0; i < n; i++) {
             sum = sum + arr[i];
             if (m.containsKey(sum - k)) {
-                res += m.get(sum - k);
+                res += m.get(sum - k);// res=Math.max(res,i-m.get(sum-k))
             }
-            m.put(sum, m.getOrDefault(sum, 0) + 1);
+            m.put(sum, m.getOrDefault(sum, 0) + 1);// m/put(sum,i)
         }
         return res;
     }
