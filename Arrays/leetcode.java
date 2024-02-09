@@ -21,6 +21,53 @@ public class leetcode {
         return arr;
     }
 
+    public static int[] alternativeeleArray(int arr[]) {
+        int even = 0, odd = 1;
+        int ans[] = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                arr[even] = arr[i];
+                even = even + 2;
+            } else {
+                arr[odd] = arr[i];
+                odd = odd + 2;
+            }
+        }
+        return ans;
+    }
+
+    public static int firstmiss(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                arr[i] = arr.length;
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            int x = Math.abs(arr[i]);
+            if (arr[i] > 0 && arr[i] <= arr.length) {
+                arr[x - 1] = -arr[x - 1];
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                return i + 1;
+            }
+        }
+        return arr.length + 1;
+    }
+
+    public static int[] leader(int arr[]) {
+        int max = -1;
+        int ans[] = new int[arr.length];
+        for (int i = arr.length - 1; i >= 0; i--) {
+            ans[i] = max;
+            if (arr[i] >= max) {
+                max = arr[i];
+            }
+        }
+        return ans;
+    }
+
     public static int[] concateArray(int arr[]) {
         int n = arr.length;
         int res[] = new int[2 * n];
@@ -48,21 +95,6 @@ public class leetcode {
         int cnt[] = new int[101];
         for (int x : arr) {
             res += cnt[x]++;
-        }
-        return res;
-    }
-
-    public static int[] countSmaller(int arr[]) {// in 0(n^2)
-        int n = arr.length;
-        int res[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            int cnt = 0;
-            for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[i]) {
-                    cnt++;
-                }
-            }
-            res[i] = cnt;
         }
         return res;
     }
@@ -100,6 +132,21 @@ public class leetcode {
             ans.add(x + k >= max);
         }
         return ans;
+    }
+
+    public static int[] countSmaller(int arr[]) {// in 0(n^2)
+        int n = arr.length;
+        int res[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            int cnt = 0;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[i]) {
+                    cnt++;
+                }
+            }
+            res[i] = cnt;
+        }
+        return res;
     }
 
     public static int[] countarray(int arr[]) {
