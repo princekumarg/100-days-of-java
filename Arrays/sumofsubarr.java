@@ -93,6 +93,25 @@ public class sumofsubarr {
         return (int) max;
     }
 
+    public static int xorsub(int arr[], int k) {
+        int xor = 0;
+        int cnt = 0;
+        Map<Integer, Integer> m = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            xor = xor ^ arr[i];
+            int x = xor ^ k;
+            if (m.containsKey(x)) {
+                cnt += m.get(x);
+            }
+            if (m.containsKey(xor)) {
+                m.put(xor, m.get(xor) + 1);
+            } else {
+                m.put(xor, 1);
+            }
+        }
+        return cnt;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 10, 5, 2, 7, 1, 9 };
         int n = arr.length;
