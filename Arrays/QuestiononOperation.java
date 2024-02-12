@@ -77,6 +77,14 @@ public class QuestiononOperation {
         return Math.min(Math.min(nums1, nums2), nums3);
     }
 
+    public static int circlegame(int n, int k) {
+        if (n == 1) {
+            return 0;
+        }
+        int ans = (circlegame(n - 1, k) + k) % n;
+        return ans == 0 ? n : ans;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 3, 3, 2, 1 };
         int n = arr.length;
