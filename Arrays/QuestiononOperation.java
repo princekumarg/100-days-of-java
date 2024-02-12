@@ -57,6 +57,26 @@ public class QuestiononOperation {
         return temp;
     }
 
+    public static int removeMaxandMin(int nums[]) {
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
+        int max1 = 0, min1 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > max) {
+                max = nums[i];
+                max1 = i;
+            }
+            if (nums[i] < min) {
+                min = nums[i];
+                min1 = i;
+            }
+        }
+        int nums1 = Math.max(max1 + 1, min1 + 1);
+        int nums2 = Math.max(nums.length - max1, nums.length - min1);
+        int nums3 = Math.min(max1 + 1, min1 + 1) + Math.min(nums.length - max1, nums.length - min1);
+        return Math.min(Math.min(nums1, nums2), nums3);
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 3, 3, 2, 1 };
         int n = arr.length;
