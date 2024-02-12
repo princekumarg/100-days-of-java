@@ -85,6 +85,24 @@ public class QuestiononOperation {
         return ans == 0 ? n : ans;
     }
 
+    public static int countpairsum(int arr[], int k) {
+        int i = 0;
+        int j = arr.length - 1;
+        int count = 0;
+        while (i < j) {
+            if (arr[i] + arr[j] < k) {
+                i++;
+            } else if (arr[i] + arr[j] > k) {
+                j--;
+            } else {
+                count++;
+                i++;
+                j--;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 3, 3, 2, 1 };
         int n = arr.length;
