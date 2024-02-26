@@ -24,17 +24,11 @@ public class BinaryMath {
         char arr[] = s.toCharArray();
         int n = arr.length;
         D = D % 2;
-        reverse(arr, 0, D - 1);
+        reverse(arr, 0, n - 1);
         reverse(arr, D, n - 1);
         reverse(arr, 0, n - 1);
         String temp = String.valueOf(arr);
         ans.add(Integer.parseInt(temp, 2));
-        char arr1[] = s.toCharArray();
-        reverse(arr1, 0, n - D - 1);
-        reverse(arr1, n - D, n - 1);
-        reverse(arr1, 0, n - 1);
-        String temp1 = String.valueOf(arr1);
-        ans.add(Integer.parseInt(temp1, 2));
         return ans;
     }
 
