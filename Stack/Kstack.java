@@ -1,4 +1,4 @@
-package OOPS;
+package Stack;
 
 public class Kstack {
     int arr[], top[], next[];
