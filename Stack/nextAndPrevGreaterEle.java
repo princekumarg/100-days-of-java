@@ -1,10 +1,6 @@
 package Stack;
 
-import java.util.Collection;
 import java.util.Stack;
-import java.util.Vector;
-
-import operators_datatypes.formate;
 
 public class nextAndPrevGreaterEle {
     public static void printprev(int arr[], int n) {

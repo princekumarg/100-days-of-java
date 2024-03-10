@@ -25,8 +25,42 @@ public class validParathesis {
         return ((a == '(' && b == ')') || (a == '{' && b == '}') || (a == '[' && b == ']'));
     }
 
+    public static int LongestValidParanthesis(String str) {
+        int left = 0;
+        int right = 0;
+        int max = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left == right) {
+                max = Math.max(max, 2 * right);
+            } else if (right > left) {
+                left = right = 0;
+            }
+        }
+        left = right = 0;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (str.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left == right) {
+                max = Math.max(max, 2 * left);
+            } else if (left > right) {
+                left = right = 0;
+            }
+        }
+        return max;
+
+    }
+
     public static void main(String[] args) {
         String str = "({})";
         System.out.println(isBalanced(str));
+        System.out.println(LongestValidParanthesis(str));
     }
 }
